@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Job Hunger</title>
+  <script type="text/javascript" src="js/jquery-3.3.1.js"></script>
+  <script type="text/javascript" src="js/popup.js"></script>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+  <link rel="stylesheet" type="text/css" href="styles.css">
+</head>
+<body class="container">
+
+  <div id="showSignIn">
+    <h3>Sign In to Job Hunger:</h3>
+    <div class="error">Invalid login credentials. Please try again.</div>
+    <form method="post" class="form-group">
+      <p><input type="text" name="login" value="" placeholder="Email" id="email" class="wide-input"></p>
+      <div class="border"></div>
+      <p><input type="password" name="password" value="" placeholder="Password" id="password" class="wide-input"></p>
+      <div class="border"></div><br>
+      <p class="submit"><input type="submit" name="commit" value="Log In" id="login" class="special-button"></p>
+    </form>
+  </div>
+
+  <div id="jobForm" class="invisible">
+    <div class="row">
+      <div class='col-xs-9'>
+        <h3>Save this job to Job Hunger:</h3>
+      </div>
+      <div class='col-xs-3 button-container'>
+        <button id="logout" class="special-button">Log Out</button>
+      </div>
+    </div>
+
+    <div class="success">Success - job was added to your Job Hunger dashboard!</div>
+    <div class="failure">Unable to create job. Please try again.</div>
+
+    <form class="form-group">
+      <label for="title" class="label label-default">Title</label><br>
+      <input type="text" name="title" id="title" class="wide-input" placeholder="Title">
+      <div class="border"></div>
+
+      <label for="company" class="label label-default">Company</label><br>
+      <input type="text" name="company" id="company" class="wide-input" placeholder="Company">
+      <div class="border"></div>
+
+      <label for="url" class="label label-default">Url</label><br>
+      <input type="text" name="url" id="url" class="wide-input"><br>
+      <div class="border"></div><br>
+
+
+      <div class="row">
+        <div class='col-xs-7'>
+          <input type="submit" value="Create Job" id="createJob" class="special-button">
+        </div>
+        <div class="col-xs-5">
+          <a href="http://job-hunger.surge.sh/" class="link" target="_blank">Go to Job Hunger</a>
+        </div>
+      </div>
+    </form>
+  </div>
+
+</body>
