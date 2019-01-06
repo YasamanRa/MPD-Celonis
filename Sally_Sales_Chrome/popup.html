@@ -1,62 +1,136 @@
-<!DOCTYPE html>
 <html>
+
 <head>
-  <title>Job Hunger</title>
-  <script type="text/javascript" src="js/jquery-3.3.1.js"></script>
-  <script type="text/javascript" src="js/popup.js"></script>
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
-  <link rel="stylesheet" type="text/css" href="styles.css">
+  <meta charset="UTF-8">
+  <link href="css/popup.css" rel="stylesheet">
+  <link href="css/font-awesome.min.css" rel="stylesheet">
 </head>
-<body class="container">
 
-  <div id="showSignIn">
-    <h3>Sign In to Job Hunger:</h3>
-    <div class="error">Invalid login credentials. Please try again.</div>
-    <form method="post" class="form-group">
-      <p><input type="text" name="login" value="" placeholder="Email" id="email" class="wide-input"></p>
-      <div class="border"></div>
-      <p><input type="password" name="password" value="" placeholder="Password" id="password" class="wide-input"></p>
-      <div class="border"></div><br>
-      <p class="submit"><input type="submit" name="commit" value="Log In" id="login" class="special-button"></p>
-    </form>
-  </div>
+<!---START BODY--->
 
-  <div id="jobForm" class="invisible">
-    <div class="row">
-      <div class='col-xs-9'>
-        <h3>Save this job to Job Hunger:</h3>
+<body>
+  <div class="panel">
+    <span id="sidebar-arrow" class="panel__icon panel__icon_opened">
+      <img src="/img/icon-sidebar.svg" alt="">
+    </span>
+    <div class="panel-main panel-main_active">
+      <!-- header top row with logo -->
+      <div class="panel-main__top">
+        <a class="panel-main__logo-wrap" href="" target="_blank">
+          <img class="panel-main__logo" src="/img/Logo@4x.png" alt="">
+        </a>
       </div>
-      <div class='col-xs-3 button-container'>
-        <button id="logout" class="special-button">Log Out</button>
+      <!-- MAIN CONTENT BLOCK -->
+      <div class="panel-main__block">
+
+
+        <!--- ANALYSIS--->
+        <div class="content-block">
+          <nav class="panel-main__menu">
+            <a class="panel-main__menu-tab panel-main__menu-tab_active">Analysis</a>
+          </nav>
+          <!--- Meta Description of current analyzed lead / opportunity --->
+          <div id="description-block" class="sub-content-block">
+            <table>
+              <tr>
+                <td class="bold-table-column"> Type </<td>
+                <td>Opportunity</<td>
+              </tr>
+              <tr>
+                <td class="bold-table-column"> Name </td>
+                <td>salesforce.com - 200 Widgets</td>
+              </tr>
+              <tr>
+                <td class="bold-table-column"> ID </td>
+                <td> 0061t0000050e4EAAQ </td>
+              </tr>
+            </table>
+          </div>
+          <!--- Filter opportunities for process explorer --->
+          <div id="filter-block" class="sub-content-block">
+            <table>
+              <i> Filter setting:</i>
+              <tr>
+                <td class="bold-table-column"> Industry </<td>
+                <td>
+                  <select>
+                    <option value="Manufacturing">Manufacturing</option>
+                    <option value="Pharma">Pharma</option>
+                    <option value="Biotechnology">Biotechnology</option>
+                    <option value="Entertainement">Entertainement</option>
+                  </select>
+                </td>
+              </tr>
+              <tr>
+                <td class="bold-table-column"> Company Size </<td>
+                <td>
+                  <select>
+                    <option value="Small">Small</option>
+                    <option value="Medium">Medium</option>
+                    <option value="Large">Large</option>
+                  </select>
+                </td>
+              </tr>
+              <tr>
+                <td class="bold-table-column"> Region </<td>
+                <td>
+                  <select>
+                    <option value="Medium">NORAM</option>
+                    <option value="Large">EMEA</option>
+                    <option value="">APAC</option>
+                    <option value="">LATAM</option>
+                  </select>
+                </td>
+              </tr>
+            </table>
+          </div>
+        </div>
+
+
+        <!---PROCESS EXPLORER--->
+        <div class="content-block">
+          <nav class="panel-main__menu">
+            <a id="tab-process" class="panel-main__menu-tab panel-main__menu-tab_active">Process</a>
+            <a id="tab-colleague" class="panel-main__menu-tab panel-main__menu-tab_invisible">Colleagues</a>
+          </nav>
+          <div class="sub-content-block">
+            <i>57 cases within your salesforce organisation analyzed</i>
+            <img src="img/process-flow.jpg" alt="" width="100%">
+            <!-- SUGGESTED NEXT STEPS -->
+            <div class="sub-content-block">
+              <table>
+                <h3 class="blue-headline"> Suggested next steps:</h3>
+                <tr>
+                  <td class="bold-table-column"> Description </td>
+                  <td class="bold-table-column"> Performance Score </td>
+                </tr>
+                <tr class="next-steps">
+                  <td> <input type="checkbox" name="next-step" value="next-step-1"> Next Step 1 </td>
+                  <td> 56% </td>
+                </tr>
+                <tr class="next-steps">
+                  <td> <input type="checkbox" name="next-step" value="next-step-2"> Next Step 2 </td>
+                  <td> 47% </td>
+                </tr>
+                <tr class="next-steps">
+                  <td> <input type="checkbox" name="next-step" value="next-step-3"> Next Step 3 </td>
+                  <td> 43% </td>
+                </tr>
+              </table>
+              <button id="create-task" class="button-next-steps" type="button" name="button"> Create tasks</button>
+              <button id="find-colleagues" class="button-next-steps" type="button" name="button"> Find colleagues</button>
+            </div>
+          </div>
+
+        </div>
+
       </div>
     </div>
 
-    <div class="success">Success - job was added to your Job Hunger dashboard!</div>
-    <div class="failure">Unable to create job. Please try again.</div>
-
-    <form class="form-group">
-      <label for="title" class="label label-default">Title</label><br>
-      <input type="text" name="title" id="title" class="wide-input" placeholder="Title">
-      <div class="border"></div>
-
-      <label for="company" class="label label-default">Company</label><br>
-      <input type="text" name="company" id="company" class="wide-input" placeholder="Company">
-      <div class="border"></div>
-
-      <label for="url" class="label label-default">Url</label><br>
-      <input type="text" name="url" id="url" class="wide-input"><br>
-      <div class="border"></div><br>
-
-
-      <div class="row">
-        <div class='col-xs-7'>
-          <input type="submit" value="Create Job" id="createJob" class="special-button">
-        </div>
-        <div class="col-xs-5">
-          <a href="http://job-hunger.surge.sh/" class="link" target="_blank">Go to Job Hunger</a>
-        </div>
-      </div>
-    </form>
   </div>
 
+  <script type="text/javascript" src="js/popup.js"></script>
 </body>
+<!---END BODY--->
+
+</html>

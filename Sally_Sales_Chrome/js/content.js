@@ -4,7 +4,7 @@
 
 console.log("content.js start");
 
-// Add Listener when on message 
+// Add Listener when on message
 chrome.runtime.onMessage.addListener(function(msg, sender){
     if(msg == "toggle"){
         toggle();
@@ -21,13 +21,13 @@ iframe.style.right = "0px";
 iframe.style.zIndex = "9000000000000000000";
 iframe.frameBorder = "none";
 iframe.style.display = "none"
-iframe.src = chrome.extension.getURL("popup-panel.html")
+iframe.src = chrome.extension.getURL("popup.html")
 document.body.appendChild(iframe);
 
 
 function toggle(){
   // Toggle side panel
-
+    console.log("toggle()")
     if(iframe.style.display == "none"){
         iframe.style.display="block";
     }
@@ -35,6 +35,7 @@ function toggle(){
         iframe.style.display="none";
     }
 }
+
 
 
 console.log("content.js end");

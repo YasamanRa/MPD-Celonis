@@ -5,13 +5,15 @@
   "description": "Data driven and process driven sales insights",
   "version": "1.0",
   "background": {
-    "scripts": ["js/background.js"]
+    "scripts": ["js/background.js"],
+    "persistent": false
   },
   "content_scripts": [
     {
       "matches": [
         "https://eu16.lightning.force.com/*",
-        "http://eu16.lightning.force.com/*"
+        "http://eu16.lightning.force.com/*",
+        "<all_urls>"
       ],
       "js": [
         "js/jquery-3.3.1.js",
@@ -23,12 +25,18 @@
     "default_icon": "img/icon@2x.png"
   },
   "permissions": [
+    "tabs",
     "activeTab",
+    "storage",
+    "declarativeContent",
     "*://*/*"
   ],
   "web_accessible_resources": [
-    "popup-panel.html",
+    "popup.html",
     "css/*.css",
     "img/*"
-  ]
+  ],
+  "icons":{
+    "128": "img/icon@2x.png"
+  }
 }
