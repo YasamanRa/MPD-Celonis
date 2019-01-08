@@ -52,13 +52,6 @@ function toggle(){
     }
 }
 
-function displayColleagueTab(){
-  // displays colleague tab, deactivate process view
-  console.log("displayColleagueTab()");
-  var colTab = document.getElementById("tab-colleague");
-
-  colTab.classList.remove("panel-main__menu-tab_invisible");
-}
 
 function optimizeUI(){
   /*

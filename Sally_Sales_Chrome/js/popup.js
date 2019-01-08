@@ -50,7 +50,7 @@ async function wait(time) {
 }
 
 // hacky solution to wait long enough until DOM of popup is completely loaded
-wait(10000);
+wait(13000);
 
 
 

@@ -66,6 +66,27 @@ h3.blue-headline {
   margin-top:5px;
 }
 
+#content-block-colleague{
+  margin-top:20px;
+}
+
+#content-block-colleague h5{
+  margin:0;
+}
+
+.colleague-foto{
+    width: 25%;
+    height: auto;
+    border-radius: 100%;
+    float: left;
+    margin-right:20px;
+}
+
+.contact-box {
+  width: 70%
+  float:right;
+}
+
 .panel {
   position: relative;
   width: 95%;
