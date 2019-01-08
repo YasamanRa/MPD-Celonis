@@ -11,7 +11,7 @@
 <body class="iframe-state panel-hidden">
   <div class="panel">
     <span id="sidebar-arrow" class="panel__icon panel__icon_opened">
-      <img src="/img/icon-sidebar.svg" alt="">
+      <img id`"icon-arrow-sidebar" src="/img/icon-sidebar.svg" alt="">
     </span>
     <div class="panel-main panel-main_active">
       <!-- header top row with logo -->
@@ -87,15 +87,15 @@
         </div>
 
 
-        <!---PROCESS EXPLORER--->
+        <!---Breadcrumb like navi --->
         <div class="content-block">
           <nav class="panel-main__menu">
             <a id="tab-process" class="panel-main__menu-tab panel-main__menu-tab_active">Process</a>
             <a id="tab-colleague" class="panel-main__menu-tab panel-main__menu-tab_invisible">Colleagues</a>
           </nav>
-          <div class="sub-content-block">
+          <!---PROCESS EXPLORER--->
+          <div id="content-block-process" class="sub-content-block content-block_invisible">
             <i>57 cases within your salesforce organisation analyzed</i>
-            <!-- img src="img/process-flow.jpg" alt="" width="100%"-->
             <iframe src="https://cdtm.eu-1.celonis.cloud/process-mining/public/b0bc7039-168b-4fb8-92d7-6384583b22a9/#/frontend/documents/b0bc7039-168b-4fb8-92d7-6384583b22a9/view" height="600" width="450" style="border-style:solid;border-width:1px; border-color:#ddd;"></iframe>
             <!-- SUGGESTED NEXT STEPS -->
             <div class="sub-content-block">
@@ -120,6 +120,13 @@
               </table>
               <button id="create-task" class="button-next-steps" type="button" name="button"> Create tasks</button>
               <button id="find-colleagues" class="button-next-steps" type="button" name="button"> Find colleagues</button>
+            </div>
+          </div>
+          <!-- FIND A COLLEAGUE -->
+          <div id="content-block-colleague" class="sub-content-block content-block_visible">
+            <div class="sub-content-block">
+
+
             </div>
           </div>
 

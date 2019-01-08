@@ -12,8 +12,7 @@
     {
       "matches": [
         "https://eu16.lightning.force.com/*",
-        "http://eu16.lightning.force.com/*",
-        "<all_urls>"
+        "http://eu16.lightning.force.com/*"
       ],
       "js": [
         "js/jquery-3.3.1.js",

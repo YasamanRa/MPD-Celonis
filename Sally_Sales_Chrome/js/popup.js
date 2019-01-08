@@ -1,23 +1,31 @@
 console.log("popup.js loadeing");
 
 
-function optimizeUI(){
-  /*
-  * Optimizes the UI by removing unwanted elements of the DOM
-  */
-  document.getElementsByClassName("trial-header")[0].style.display="none";    // Remove trial header
-  document.getElementsByClassName("utilitybar")[0].style.display="none";      // Remove call utility bar on bottom utilitybar
-  document.getElementsByClassName("analysis-menu")[0].style.display="none";   // Remove Cenonis menu on top
-  document.getElementsByClassName("tabs")[0].style.display="none";            // Remove tabs menu on bottom
-}
+
 
 function colleagueClickHandler(e) {
   console.log("colleagueClickHandler()");
-  alert("Button pressed");
+  var tabColleague = document.getElementById("tab-colleague");
+  var tabProcess = document.getElementById("tab-process");
+
+
+  // show colleague tab in nav bar and make process inactive
+  tabColleague.style.display = "block";
+  tabColleague.classList.add("panel-main__menu-tab_active");
+
+  tabProcess.classList.remove("panel-main__menu-tab_active");
+  tabProcess.classList.add("panel-main__menu-tab_inactive");
+
 }
 
+
+
 function toggleHandler() {
-  chrome.tabs.sendMessage(tabs[0].id,"toggle");
+    chrome.tabs.query({currentWindow: true, active: true}, function (tabs){
+    var activeTab = tabs[0];
+    chrome.tabs.sendMessage(activeTab.id, "toggle");
+    console.log("side arrow button clicked");
+   });
 }
 
 function sleep(ms) {
@@ -32,12 +40,12 @@ async function wait(time) {
   console.log('Wait ...');
   await sleep(time);
   console.log('10 seconds later');
+  console.log(document);
 
-  optimizeUI();
-  console.log("UI optimized");
   document.getElementById("find-colleagues").addEventListener('click', colleagueClickHandler);
   console.log("Find colleague event registered");
   document.getElementById("sidebar-arrow").addEventListener("click", toggleHandler);
+  console.log("toggleHandler added")
 
 }
 

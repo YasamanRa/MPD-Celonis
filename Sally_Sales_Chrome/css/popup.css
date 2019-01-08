@@ -50,6 +50,14 @@ h3.blue-headline {
   padding-top:10px;
 }
 
+.content-block_visible {
+  display: block;
+}
+
+.content-block_invisible {
+  display: none;
+}
+
 .button-next-steps{
   padding: 5px 16px;
   border-radius: 4px;

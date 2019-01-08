@@ -10,9 +10,8 @@ console.log("content.js start");
 chrome.runtime.onMessage.addListener(function(msg, sender){
     if(msg == "toggle"){
         console.log("chrome.runtime.onMessage.addListener");
-        console.log(window);
         toggle();
-        optimizeUI();
+        //optimizeUI();
     }
 })
 
@@ -35,21 +34,20 @@ iframe.style.transition = "all 0.5s ease-out";
 iframe.src = chrome.extension.getURL("popup.html");
 document.body.appendChild(iframe);
 console.log("iframe appended to DOM");
-console.log(iframe);
-console.log(document);
-var button = document.querySelector('#find-colleagues');
-console.log(button);
 
 function toggle(){
   // Toggle side panel
-    console.log("toggle()", opened);
-
+    var arrow = document.getElementById("icon-arrow-sidebar");
     if(opened){
-        iframe.style.transform = "translateX(0px)";
+        iframe.style.transform = "translateX(-20px)";
+        //arrow.removeClass("panel__icon_opened");
+        //arrow.addClass("panel__icon");
         opened = false;
     }
     else{
         iframe.style.transform = "translateX(-"+panelWidth+"px)";
+        //arrow.removeClass("panel__icon");
+        //arrow.addClass("panel__icon_opened");
         opened = true;
     }
 }
@@ -62,11 +60,31 @@ function displayColleagueTab(){
   colTab.classList.remove("panel-main__menu-tab_invisible");
 }
 
-//EVENT NEEDS TO BE ADDED. DOM not loaded properly
-addEventListener('loaded', function () {
-  console.log(document.querySelector('#find-colleagues'));
-  document.getElementById("find-colleagues").addEventListener('click', colleagueClickHandler);
-  console.log("Find colleague event registered");
-});
+function optimizeUI(){
+  /*
+  * Optimizes the UI by removing unwanted elements of the DOM
+  */
+  document.getElementsByClassName("trial-header")[0].style.display="none";    // Remove trial header
+  document.getElementsByClassName("utilitybar")[0].style.display="none";      // Remove call utility bar on bottom utilitybar
+  // ISSUE: It seems like we have no access to an iFrame from another Source (Cross scripting)
+  // document.getElementsByClassName("analysis-menu")[0].style.display="none";   // Remove Cenonis menu on top
+  // document.getElementsByClassName("tabs")[0].style.display="none";            // Remove tabs menu on bottom
+}
+
+function sleep(ms) {
+  return new Promise(resolve => setTimeout(resolve, ms));
+}
+
+async function wait(time) {
+  /*
+  * waits for X miliseconds until (hopefully) our DOM object is loaded and then
+  * optimizes the UI
+  */
+  await sleep(time);
+  optimizeUI();
+
+}
+
+wait(10000)
 
 console.log("content.js end");
