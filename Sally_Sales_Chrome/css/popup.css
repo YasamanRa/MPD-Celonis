@@ -41,6 +41,7 @@ h3.blue-headline {
   color:#1077ed;
 }
 
+
 .sub-content-block {
   margin-top: 5px;
 }
@@ -59,7 +60,7 @@ h3.blue-headline {
 
 .panel {
   position: relative;
-  width: 350px;
+  width: 95%;
   height: 100%;
   position: fixed;
   top: 0;
@@ -113,7 +114,7 @@ h3.blue-headline {
 .panel-main__menu {
   display: flex;
   position: relative;
-  width: 430px;
+  width: 100%;
   padding: 0 15px;
   transform: translateX(-20px);
   border-bottom: 1px solid rgba(165,175,190,0.2);

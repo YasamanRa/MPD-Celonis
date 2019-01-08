@@ -7,7 +7,6 @@ console.log("Background.js loaded");
 chrome.browserAction.onClicked.addListener(function(){
     chrome.tabs.query({active: true, currentWindow: true}, function(tabs){
         console.log("toogle message sent");
-        console.log(tabs[0].url);
         chrome.tabs.sendMessage(tabs[0].id,"toggle");
     })
 });
