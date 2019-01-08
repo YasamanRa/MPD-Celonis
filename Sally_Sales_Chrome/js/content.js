@@ -8,10 +8,16 @@ console.log("content.js start");
 
 // Add Listener when on message
 chrome.runtime.onMessage.addListener(function(msg, sender){
+
     if(msg == "toggle"){
         console.log("chrome.runtime.onMessage.addListener");
         toggle();
         //optimizeUI();
+    }
+
+    if(msg == "task"){
+      console.log("content.js: task message received");
+      console.log(document);
     }
 })
 
