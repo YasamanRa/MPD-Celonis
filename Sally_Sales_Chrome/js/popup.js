@@ -47,6 +47,7 @@ function colleagueBackHandler(e) {
 
 }
 
+
 function taskClickHandler(){
   // Send message
   chrome.tabs.query({active: true, currentWindow: true}, function(tabs){
@@ -104,6 +105,7 @@ async function wait(time) {
   document.getElementById('mail-action').addEventListener("click", mailClickHandler);
   document.getElementById('call-action').addEventListener("click", callClickHandler);
   document.getElementById('create-task').addEventListener("click", taskClickHandler);
+  document.getElementById('tab-process').addEventListener("click", colleagueBackHandler);
 
 }
 

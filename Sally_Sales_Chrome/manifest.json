@@ -22,7 +22,7 @@
     }
   ],
   "browser_action": {
-    "default_icon": "img/icon@2x.png"
+    "default_icon": "img/favicon.png"
   },
   "permissions": [
     "tabs",
@@ -37,6 +37,6 @@
     "img/*"
   ],
   "icons":{
-    "128": "img/icon@2x.png"
+    "128": "img/favicon.png"
   }
 }
