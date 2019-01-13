@@ -5,6 +5,7 @@
   <link href="css/popup.css" rel="stylesheet">
   <link href="css/font-awesome.min.css" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css?family=Roboto:200" rel="stylesheet">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
 </head>
 
 <!---START BODY--->
@@ -28,7 +29,10 @@
       </span>
       <!--- Meta Description of current analyzed lead / opportunity --->
       <div class="white-box">
-        <h6> Your selected case </h6>
+        <div class="icon-headline-block">
+          <img src="/img/file.svg" class="icon-headline" alt="">
+          <h6> Your selected case </h6>
+        </div>
         <div id="description-block" class="sub-content-block">
           <table>
             <tr>
@@ -49,7 +53,10 @@
 
       <!--- Filter opportunities for process explorer --->
       <div class="white-box">
-        <h6> Filter options </h6>
+        <div class="icon-headline-block">
+          <img src="/img/filter.svg" class="icon-headline" alt="">
+          <h6> Filter options </h6>
+        </div>
         <div id="filter-block" class="sub-content-block">
           <table>
             <tr>
@@ -109,7 +116,7 @@
       <div class="panel-main__block">
         <!-- header top row with logo -->
         <div class="panel-main__top">
-          <img src="/img/left-arrow.svg" alt="back">
+          <a id="analyis-back" href="#"><img src="/img/left-arrow.svg" alt="back"></a>
           <img class="panel-main__logo" src="/img/logo-white-lok.svg" alt="">
           <img src="/img/home.svg" alt="home" height="">
         </div>
@@ -141,8 +148,8 @@
                 <p> Calculate detailed business case </p>
               </div>
               <div class="to-do-metric">
-                  <h4> 76%</h4>
-                  <p class="metric-description"> of cases </p>
+                <h4> 76%</h4>
+                <p class="metric-description"> of cases </p>
               </div>
             </div>
             <!-- SECOND NEXT STEP -->
@@ -155,62 +162,92 @@
                 <p> Change key stakeholder </p>
               </div>
               <div class="to-do-metric">
-                  <h4> 23%</h4>
-                  <p class="metric-description"> of cases </p>
+                <h4> 23%</h4>
+                <p class="metric-description"> of cases </p>
               </div>
             </div>
           </div>
         </div>
+
+        <!-- FIND A COLLEAGUE add content-block_invisible to add-->
+        <div id="content-block-colleague" class="content-block white-box content-block_invisible">
+          <div class="icon-headline-block">
+            <img src="/img/tap.svg" class="icon-headline" alt="">
+            <h6> Find Colleagues </h6>
+          </div>
+          <p class="amount-cases"> These colleagues within your organization have experience taking this step within your configuration </p>
+          <!-- CONTACT LIST OF COLLEAGUES -->
+          <div class="contact-list">
+            <!-- CONTACT 1 -->
+            <div class="contact-box">
+              <div class="colleague-image-wrapper">
+                <img src="img/colleague.jpg" class="colleague-foto" alt="">
+              </div>
+              <div class="contact-description">
+                <p class="colleague-name"> Yasa Mama, Sales Executive </p>
+                <span> <i class="fas fa-phone-volume"></i>
+                  <p id="call-action" class="colleague-contact-details"> +49 0172 9293 012 </p>
+                </span>
+                <span> <i class="fas fa-envelope"></i>
+                  <p id="mail-action" class="colleague-contact-details"> yasa.mama@global-tech.com </p>
+                </span>
+              </div>
+              <div class="to-do-metric">
+                <h4> 18</h4>
+                <p class="metric-description"> times </p>
+                <p class="metric-description"> done </p>
+              </div>
+            </div>
+            <!-- CONTACT 2 -->
+            <div class="contact-box">
+              <div class="colleague-image-wrapper">
+                <img src="img/colleague.jpg" class="colleague-foto" alt="">
+              </div>
+              <div class="contact-description">
+                <p class="colleague-name"> Yasa Mama, Sales Executive </p>
+                <span> <i class="fas fa-phone-volume"></i>
+                  <p class="colleague-contact-details"> +49 0172 9293 012 </p>
+                </span>
+                <span> <i class="fas fa-envelope"></i>
+                  <p class="colleague-contact-details"> yasa.mama@global-tech.com </p>
+                </span>
+              </div>
+              <div class="to-do-metric">
+                <h4> 18</h4>
+                <p class="metric-description"> times </p>
+                <p class="metric-description"> done </p>
+              </div>
+            </div>
+            <!-- CONTACT 3 -->
+            <div class="contact-box">
+              <div class="colleague-image-wrapper">
+                <img src="img/colleague.jpg" class="colleague-foto" alt="">
+              </div>
+              <div class="contact-description">
+                <p class="colleague-name"> Yasa Mama, Sales Executive </p>
+                <span> <i class="fas fa-phone-volume"></i>
+                  <p class="colleague-contact-details"> +49 0172 9293 012 </p>
+                </span>
+                <span> <i class="fas fa-envelope"></i>
+                  <p class="colleague-contact-details"> yasa.mama@global-tech.com </p>
+                </span>
+              </div>
+              <div class="to-do-metric">
+                <h4> 18</h4>
+                <p class="metric-description"> times </p>
+                <p class="metric-description"> done </p>
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+
         <div class="button-panel">
           <button id="create-task" class="" type="button" name="button"> Create tasks</button>
           <button id="find-colleagues" class="" type="button" name="button"> Find colleagues</button>
         </div>
-        <!-- FIND A COLLEAGUE -->
-        <div id="content-block-colleague" class="sub-content-block content-block_invisible">
-          <div class="sub-content-block">
-            <p class="meta-description-colleague"> 🕵🏼‍ <b>Recommended expert:</b> Ask for advise within your organisation</p>
-            <hr>
-            <!-- RECOMMENDED EXPERT -->
-            <table>
-              <tr id="td-image-column">
-                <td>
-                  <img src="img/colleague.jpg" class="colleague-foto" alt="">
-                </td>
-                <td id="td-text-column">
-                  <div class="contact-box">
-                    <h5> Yasa Mama, Account Execitive</h5>
-                    <i> #48 cases comparable cases </i>
-                    <table>
-                      <tr>
-                        <td>Phone</td>
-                        <td> <a id="call-action" class="classic-href">+49 15770362155</a></td>
-                      </tr>
-                      <tr>
-                        <td>Mail</td>
-                        <td> <a id="mail-action" class="classic-href"> yasa.mama@tc-technologies.com</a></td>
-                      </tr>
-                      <tr>
-                        <td>Skype:</td>
-                        <td> <a class="classic-href"> mama-yasi </a> </td>
-                      </tr>
-                    </table>
-                  </div>
-                </td>
-              </tr>
-            </table>
-          </div>
-          <hr>
-          <!-- OTHER EXPERTS LONG LIST -->
-          <p class="meta-description-colleague"> 🙋🏻‍ Other potential helpfull colleagues</p>
-          <ul class="list-icon">
-            <li> <a href="#" class="classic-href"> Patrick Three, Account Manager, 38 cases </a> </li>
-            <li> <a href="#" class="classic-href"> Kaya Maya, Sales specialist, 31 cases </a> </li>
-            <li> <a href="#" class="classic-href"> Lucifer Rieder, Business Development, 22 cases </a></li>
-            <li> <a href="#" class="classic-href"> Marissa Elisabeth, Junior Sales Rep, 21 cases </a></li>
-            <li> <a href="#" class="classic-href"> Matthis Pride, Sales Trainee, 15 cases </a></li>
-          </ul>
-          <button id="colleague-back" class="button-next-steps" type="button" name="button">Back</button>
-        </div>
+
       </div>
     </div>
   </div>

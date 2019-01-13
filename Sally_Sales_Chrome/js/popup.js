@@ -4,46 +4,17 @@ console.log("popup.js loadeing");
 
 
 function colleagueClickHandler(e) {
+  /* toggle colleague block */
   console.log("colleagueClickHandler()");
-  var tabColleague = document.getElementById("tab-colleague");
-  var tabProcess = document.getElementById("tab-process");
-  var blockColleague = document.getElementById("content-block-colleague");
-  var blockProcess = document.getElementById("content-block-process");
+  console.log(document);
+  var colleagueBlock = document.getElementById("content-block-colleague");
 
-
-  // show colleague nav item and make active
-  tabColleague.classList.add("panel-main__menu-tab_active");
-  // unhighlight process nav item
-  tabProcess.classList.remove("panel-main__menu-tab_active");
-  tabProcess.classList.add("panel-main__menu-tab_inactive");
-  // hide content block of process
-  blockProcess.classList.remove("content-block_visible");
-  blockProcess.classList.add("content-block_invisible");
-  // show content block of colleagues
-  blockColleague.classList.add("content-block_visible");
-  blockColleague.classList.remove("content-block_invisible");
-}
-
-function colleagueBackHandler(e) {
-  console.log("colleagueBackHandler()");
-  var tabColleague = document.getElementById("tab-colleague");
-  var tabProcess = document.getElementById("tab-process");
-  var blockColleague = document.getElementById("content-block-colleague");
-  var blockProcess = document.getElementById("content-block-process");
-
-
-  // Hide coleague nav item
-  tabColleague.classList.remove("panel-main__menu-tab_active");
-  tabColleague.classList.add("panel-main__menu-tab_invisible");
-  // activate / highlight process nav item
-  tabProcess.classList.add("panel-main__menu-tab_active");
-  tabProcess.classList.remove("panel-main__menu-tab_inactive");
-  // show content block of process
-  blockProcess.classList.add("content-block_visible");
-  blockProcess.classList.remove("content-block_invisible");
-  // hide content block of colleagues
-  blockColleague.classList.remove("content-block_visible");
-  blockColleague.classList.add("content-block_invisible");
+  if(colleagueBlock.classList.contains("content-block_invisible")){
+    colleagueBlock.classList.remove("content-block_invisible");
+  }
+  else {
+    colleagueBlock.classList.add("content-block_invisible");
+  }
 
 }
 
@@ -57,6 +28,14 @@ function proceedAnalysisHandler(){
 
 }
 
+function analyisBackHandler(){
+  // hide analysis screen and show start SCREEN
+  var startView = document.getElementById("start-screen");
+  var analysisView = document.getElementById("analysis-screen");
+
+  analysisView.classList.add("content-block_invisible");
+  startView.classList.remove("content-block_invisible");
+}
 
 function taskClickHandler(){
   // Send message
@@ -108,15 +87,14 @@ async function wait(time) {
 
   document.getElementById("find-colleagues").addEventListener('click', colleagueClickHandler);
   console.log("Find colleague event registered");
-  document.getElementById("colleague-back").addEventListener('click', colleagueBackHandler);
   console.log("colleague back event registered");
   document.getElementById("sidebar-arrow").addEventListener("click", toggleHandler);
   console.log("toggleHandler added");
   document.getElementById('mail-action').addEventListener("click", mailClickHandler);
   document.getElementById('call-action').addEventListener("click", callClickHandler);
   document.getElementById('create-task').addEventListener("click", taskClickHandler);
-  document.getElementById('tab-process').addEventListener("click", colleagueBackHandler);
   document.getElementById("proceed-analysis-button").addEventListener("click", proceedAnalysisHandler);
+  document.getElementById("analyis-back").addEventListener("click", analyisBackHandler)
 
 }
 

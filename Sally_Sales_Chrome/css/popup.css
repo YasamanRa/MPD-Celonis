@@ -206,17 +206,17 @@ div.checkbox-wrapper input[type='checkbox'] {
     height:20px;
     background:white;
     border-radius:5px;
-    border:0.5px solid gray;
+    border:1px solid sandybrown;
 }
 div.checkbox-wrapper input[type='checkbox']:checked {
-    background: #abd;
+    background: sandybrown;
 }
 
 div.to-do-box div.to-do-description{
   width: 75%;
 }
 
-div.to-do-box div.to-do-metric{
+div.to-do-metric{
   width: 15%;
   padding-left: 10px;
   border-left: solid 2px sandybrown;
@@ -238,8 +238,56 @@ p.metric-description {
   margin: 0;
 }
 
+/* --------- COLLEAGUE SECTION ----------*/
 
+.contact-list {
+  margin-top: 15px;
+  box-shadow: 3px 3px 7px 0px #33333387;
+}
 
+div.contact-box {
+  padding: 10px;
+  background: white;
+  display: flex;
+  border-bottom: 1px solid #0000001f;
+}
+
+.colleague-image-wrapper {
+  width: 20%;
+}
+
+.contact-description {
+  width: 65%;
+}
+
+div.contact-description p.colleague-name {
+  margin:0;
+  font-weight: 500;
+  font-size: 16px;
+}
+
+div.contact-description span{
+  display: block;
+}
+
+div.contact-description p.colleague-position {
+  margin:0;
+  font-weight: 200;
+  font-size: 16px;
+}
+
+div.contact-description p.colleague-contact-details {
+  margin:0;
+  font-weight: 200;
+  font-size: 14px;
+  display: inline;
+}
+
+div.contact-box h4 {
+  margin:0;
+}
+
+/*---------------*/
 .sub-content-block {
   margin-top: 5px;
 }
