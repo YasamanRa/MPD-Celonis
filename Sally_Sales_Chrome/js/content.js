@@ -23,7 +23,7 @@ chrome.runtime.onMessage.addListener(function(msg, sender){
 
 
 // Set With of the Panel. For demo make sure it is visible enough
-var panelWidth = 500;
+var panelWidth = 700;
 // Panel should be closed by default
 var opened = false;
 // Create Side Bar Panel
@@ -44,14 +44,18 @@ console.log("iframe appended to DOM");
 function toggle(){
   // Toggle side panel
     var arrow = document.getElementById("icon-arrow-sidebar");
+    var viewport = document.querySelector("div.viewport");
+
     if(opened){
-        iframe.style.transform = "translateX(-20px)";
+        iframe.style.transform = "translateX(-35px)";
+        viewport.style.opacity = 1;
         //arrow.removeClass("panel__icon_opened");
         //arrow.addClass("panel__icon");
         opened = false;
     }
     else{
         iframe.style.transform = "translateX(-"+panelWidth+"px)";
+        viewport.style.opacity = 0.3;
         //arrow.removeClass("panel__icon");
         //arrow.addClass("panel__icon_opened");
         opened = true;

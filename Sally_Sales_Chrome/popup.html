@@ -4,168 +4,216 @@
   <meta charset="UTF-8">
   <link href="css/popup.css" rel="stylesheet">
   <link href="css/font-awesome.min.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Roboto:200" rel="stylesheet">
 </head>
 
 <!---START BODY--->
 
 <body class="iframe-state panel-hidden">
+
   <div class="panel">
     <span id="sidebar-arrow" class="panel__icon panel__icon_opened">
       <img id`"icon-arrow-sidebar" src="/img/icon-sidebar.svg" alt="">
     </span>
-    <div class="panel-main panel-main_active">
-      <!-- header top row with logo -->
-      <div class="panel-main__top">
-        <a class="panel-main__logo-wrap" href="" target="_blank">
-          <img class="panel-main__logo" src="/img/Logo@4x.png" alt="">
-        </a>
+
+    <!-- START 1st VIEW: START SCREEN  -->
+    <div id="start-screen" class="panel-main content-block_invisible">
+      <!-- big logo -->
+      <div class="logo-wrapper">
+        <img id="start-screen-logo" src="/img/logo-star.png" alt="">
       </div>
-      <!-- MAIN CONTENT BLOCK -->
-      <div class="panel-main__block">
+      <!-- claim of sally sales -->
+      <span id="slogan-span">
+        <p>Leverage your sales team's collective cleverness.</p>
+      </span>
+      <!--- Meta Description of current analyzed lead / opportunity --->
+      <div class="white-box">
+        <h6> Your selected case </h6>
+        <div id="description-block" class="sub-content-block">
+          <table>
+            <tr>
+              <td class="bold-table-column"> Type </<td>
+              <td class="round-table-data">Opportunity</<td>
+            </tr>
+            <tr>
+              <td class="bold-table-column"> Name </td>
+              <td class="round-table-data">salesforce.com - 1200 Widgets</td>
+            </tr>
+            <tr>
+              <td class="bold-table-column"> ID </td>
+              <td class="round-table-data"> 0061t0000050e48AAA </td>
+            </tr>
+          </table>
+        </div>
+      </div>
 
-
-        <!--- ANALYSIS--->
-        <div class="content-block">
-          <nav class="panel-main__menu">
-            <a class="panel-main__menu-tab panel-main__menu-tab_active">Analysis</a>
-          </nav>
-          <!--- Meta Description of current analyzed lead / opportunity --->
-          <div id="description-block" class="sub-content-block">
-            <table>
-              <tr>
-                <td class="bold-table-column"> Type </<td>
-                <td>Opportunity</<td>
-              </tr>
-              <tr>
-                <td class="bold-table-column"> Name </td>
-                <td>salesforce.com - 1200 Widgets</td>
-              </tr>
-              <tr>
-                <td class="bold-table-column"> ID </td>
-                <td> 0061t0000050e48AAA </td>
-              </tr>
-            </table>
-          </div>
-          <!--- Filter opportunities for process explorer --->
-          <div id="filter-block" class="sub-content-block">
-            <table>
-              <tr>
-                <td class="bold-table-column"> Industry </<td>
-                <td>
-                  <select>
+      <!--- Filter opportunities for process explorer --->
+      <div class="white-box">
+        <h6> Filter options </h6>
+        <div id="filter-block" class="sub-content-block">
+          <table>
+            <tr>
+              <td class="bold-table-column"> Industry </<td>
+              <td>
+                <select class="table-2nd-column">
+                  <optgroup label="">
                     <option value="Manufacturing">Manufacturing</option>
                     <option value="Pharma">Pharma</option>
                     <option value="Biotechnology">Biotechnology</option>
                     <option value="Entertainement">Entertainement</option>
-                  </select>
-                </td>
-              </tr>
-              <tr>
-                <td class="bold-table-column"> Company Size </<td>
-                <td>
-                  <select>
+                  </optgroup>
+                </select>
+              </td>
+            </tr>
+            <tr>
+              <td class="bold-table-column"> Company Size </<td>
+              <td>
+                <select class="table-2nd-column">
+                  <optgroup label="">
                     <option value="Small">Small</option>
                     <option value="Medium">Medium</option>
                     <option value="Large">Large</option>
-                  </select>
-                </td>
-              </tr>
-              <tr>
-                <td class="bold-table-column"> Region </<td>
-                <td>
-                  <select>
+                  </optgroup>
+                </select>
+              </td>
+            </tr>
+            <tr>
+              <td class="bold-table-column"> Region </<td>
+              <td>
+
+                <select class="table-2nd-column">
+                  <optgroup label="">
                     <option value="Large">EMEA</option>
                     <option value="Medium">NORAM</option>
                     <option value="">APAC</option>
                     <option value="">LATAM</option>
-                  </select>
+                  </optgroup>
+                </select>
+
+              </td>
+            </tr>
+          </table>
+        </div>
+      </div>
+      <!-- buttons  -->
+      <div class="button-panel">
+        <button type="button" name="button"> Select another case</button>
+        <button id="proceed-analysis-button" type="button" name="button"> Proceed analysis </button>
+      </div>
+    </div>
+    <!-- END 1st VIEW: START SCREEN  -->
+
+    <!-- START 2ND VIEW: ANALYSIS SCREEN  -->
+    <div id="analysis-screen" class="panel-main ">
+      <!-- MAIN CONTENT BLOCK -->
+      <div class="panel-main__block">
+        <!-- header top row with logo -->
+        <div class="panel-main__top">
+          <img src="/img/left-arrow.svg" alt="back">
+          <img class="panel-main__logo" src="/img/logo-white-lok.svg" alt="">
+          <img src="/img/home.svg" alt="home" height="">
+        </div>
+        <!--- ANALYSIS--->
+        <div class="content-block white-box">
+          <div class="icon-headline-block">
+            <img src="/img/analysis.svg" class="icon-headline" alt="">
+            <h6> Analysis</h6>
+          </div>
+          <p class="amount-cases"> We found 31 comparable cases that were successfully closed! </p>
+        </div>
+
+        <!---NEXT STEPS BOX--->
+        <div id="content-block-process" class="content-block white-box">
+          <div class="icon-headline-block">
+            <img src="/img/tap.svg" class="icon-headline" alt="">
+            <h6> Next Steps</h6>
+          </div>
+          <p class="amount-cases"> Based on the data these are your suggested best next steps </p>
+          <!-- SUGGESTED NEXT STEPS -->
+          <div id="next-steps-to-do-block" class="sub-content-block">
+            <!-- FIRST NEXT STEP -->
+            <div class="to-do-box">
+              <div class="checkbox-wrapper">
+                <input type="checkbox" name="vehicle" value="Bike">
+              </div>
+              <div class="to-do-description">
+                <p class="next-steps-alternative-text"> Alternative 1</p>
+                <p> Calculate detailed business case </p>
+              </div>
+              <div class="to-do-metric">
+                  <h4> 76%</h4>
+                  <p class="metric-description"> of cases </p>
+              </div>
+            </div>
+            <!-- SECOND NEXT STEP -->
+            <div class="to-do-box">
+              <div class="checkbox-wrapper">
+                <input type="checkbox" name="vehicle" value="Bike">
+              </div>
+              <div class="to-do-description">
+                <p class="next-steps-alternative-text"> Alternative 2</p>
+                <p> Change key stakeholder </p>
+              </div>
+              <div class="to-do-metric">
+                  <h4> 23%</h4>
+                  <p class="metric-description"> of cases </p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="button-panel">
+          <button id="create-task" class="" type="button" name="button"> Create tasks</button>
+          <button id="find-colleagues" class="" type="button" name="button"> Find colleagues</button>
+        </div>
+        <!-- FIND A COLLEAGUE -->
+        <div id="content-block-colleague" class="sub-content-block content-block_invisible">
+          <div class="sub-content-block">
+            <p class="meta-description-colleague"> 🕵🏼‍ <b>Recommended expert:</b> Ask for advise within your organisation</p>
+            <hr>
+            <!-- RECOMMENDED EXPERT -->
+            <table>
+              <tr id="td-image-column">
+                <td>
+                  <img src="img/colleague.jpg" class="colleague-foto" alt="">
+                </td>
+                <td id="td-text-column">
+                  <div class="contact-box">
+                    <h5> Yasa Mama, Account Execitive</h5>
+                    <i> #48 cases comparable cases </i>
+                    <table>
+                      <tr>
+                        <td>Phone</td>
+                        <td> <a id="call-action" class="classic-href">+49 15770362155</a></td>
+                      </tr>
+                      <tr>
+                        <td>Mail</td>
+                        <td> <a id="mail-action" class="classic-href"> yasa.mama@tc-technologies.com</a></td>
+                      </tr>
+                      <tr>
+                        <td>Skype:</td>
+                        <td> <a class="classic-href"> mama-yasi </a> </td>
+                      </tr>
+                    </table>
+                  </div>
                 </td>
               </tr>
             </table>
           </div>
-        </div>
-
-
-        <!---Breadcrumb like navi --->
-        <div class="content-block">
-          <nav class="panel-main__menu">
-            <a id="tab-process" class="panel-main__menu-tab panel-main__menu-tab_active">Process</a>
-            <a id="tab-colleague" class="panel-main__menu-tab panel-main__menu-tab_invisible">Colleagues</a>
-          </nav>
-          <!---PROCESS EXPLORER--->
-          <div id="content-block-process" class="sub-content-block content-block_visible">
-            <i #> 90k cases within your salesforce organisation analyzed</i>
-            <iframe src="https://cdtm.eu-1.celonis.cloud/process-mining/public/b0bc7039-168b-4fb8-92d7-6384583b22a9/#/frontend/documents/b0bc7039-168b-4fb8-92d7-6384583b22a9/view" height="500" width="400" style="border-style:solid;border-width:1px; border-color:#ddd;"></iframe>
-            <!-- SUGGESTED NEXT STEPS -->
-            <div class="sub-content-block">
-              <table>
-                <h3 class="blue-headline"> Suggested next steps:</h3>
-                <tr>
-                  <td class="bold-table-column"> Description </td>
-                  <td class="bold-table-column"> Performance Score </td>
-                </tr>
-                <tr class="next-steps">
-                  <td> <input type="checkbox" name="next-step" value="next-step-1"> Calculate Detailed Business Case </td>
-                  <td> 46% </td>
-                </tr>
-                <tr class="next-steps">
-                  <td> <input type="checkbox" name="next-step" value="next-step-2"> Switch Key Stakeholder </td>
-                  <td> 27% </td>
-                </tr>
-              </table>
-              <button id="create-task" class="button-next-steps" type="button" name="button"> Create tasks</button>
-              <button id="find-colleagues" class="button-next-steps" type="button" name="button"> Find colleagues</button>
-            </div>
-          </div>
-          <!-- FIND A COLLEAGUE -->
-          <div id="content-block-colleague" class="sub-content-block content-block_invisible">
-            <div class="sub-content-block">
-              <p class="meta-description-colleague"> 🕵🏼‍ <b>Recommended expert:</b> Ask for advise within your organisation</p>
-              <hr>
-              <!-- RECOMMENDED EXPERT -->
-              <table>
-                <tr id="td-image-column">
-                  <td>
-                    <img src="img/colleague.jpg" class="colleague-foto" alt="">
-                  </td>
-                  <td id="td-text-column">
-                    <div class="contact-box">
-                      <h5> Yasa Mama, Account Execitive</h5>
-                      <i> #48 cases comparable cases </i>
-                      <table>
-                        <tr >
-                          <td>Phone</td>
-                          <td> <a id="call-action" class="classic-href">+49 15770362155</a></td>
-                        </tr>
-                        <tr>
-                          <td>Mail</td>
-                          <td> <a id="mail-action" class="classic-href" > yasa.mama@tc-technologies.com</a></td>
-                        </tr>
-                        <tr>
-                          <td>Skype:</td>
-                          <td> <a class="classic-href"> mama-yasi </a> </td>
-                        </tr>
-                      </table>
-                    </div>
-                  </td>
-                </tr>
-              </table>
-            </div>
-            <hr>
-            <!-- OTHER EXPERTS LONG LIST -->
-            <p class="meta-description-colleague"> 🙋🏻‍ Other potential helpfull colleagues</p>
-            <ul class="list-icon">
-              <li> <a href="#" class="classic-href"> Patrick Three, Account Manager, 38 cases </a> </li>
-              <li> <a href="#" class="classic-href"> Kaya Maya, Sales specialist, 31 cases </a> </li>
-              <li> <a href="#" class="classic-href"> Lucifer Rieder, Business Development, 22 cases </a></li>
-              <li> <a href="#" class="classic-href"> Marissa Elisabeth, Junior Sales Rep, 21 cases </a></li>
-              <li> <a href="#" class="classic-href"> Matthis Pride, Sales Trainee, 15 cases </a></li>
-            </ul>
-            <button id="colleague-back" class="button-next-steps" type="button" name="button">Back</button>
-          </div>
+          <hr>
+          <!-- OTHER EXPERTS LONG LIST -->
+          <p class="meta-description-colleague"> 🙋🏻‍ Other potential helpfull colleagues</p>
+          <ul class="list-icon">
+            <li> <a href="#" class="classic-href"> Patrick Three, Account Manager, 38 cases </a> </li>
+            <li> <a href="#" class="classic-href"> Kaya Maya, Sales specialist, 31 cases </a> </li>
+            <li> <a href="#" class="classic-href"> Lucifer Rieder, Business Development, 22 cases </a></li>
+            <li> <a href="#" class="classic-href"> Marissa Elisabeth, Junior Sales Rep, 21 cases </a></li>
+            <li> <a href="#" class="classic-href"> Matthis Pride, Sales Trainee, 15 cases </a></li>
+          </ul>
+          <button id="colleague-back" class="button-next-steps" type="button" name="button">Back</button>
         </div>
       </div>
     </div>
+  </div>
 
   </div>
 

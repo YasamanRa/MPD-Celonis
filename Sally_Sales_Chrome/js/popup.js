@@ -47,6 +47,16 @@ function colleagueBackHandler(e) {
 
 }
 
+function proceedAnalysisHandler(){
+  // hide start screen and show analyis SCREEN
+  var startView = document.getElementById("start-screen");
+  var analysisView = document.getElementById("analysis-screen");
+
+  startView.classList.add("content-block_invisible");
+  analysisView.classList.remove("content-block_invisible");
+
+}
+
 
 function taskClickHandler(){
   // Send message
@@ -106,6 +116,7 @@ async function wait(time) {
   document.getElementById('call-action').addEventListener("click", callClickHandler);
   document.getElementById('create-task').addEventListener("click", taskClickHandler);
   document.getElementById('tab-process').addEventListener("click", colleagueBackHandler);
+  document.getElementById("proceed-analysis-button").addEventListener("click", proceedAnalysisHandler);
 
 }
 
