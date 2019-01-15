@@ -18,7 +18,7 @@
     </span>
 
     <!-- START 1st VIEW: START SCREEN  -->
-    <div id="start-screen" class="panel-main ">
+    <div id="start-screen" class="panel-main content-block_invisible">
       <!-- big logo -->
       <div class="logo-wrapper">
         <img id="start-screen-logo" src="/img/logo-star.png" alt="">
@@ -49,6 +49,10 @@
             </tr>
           </table>
         </div>
+        <div class="another-case-panel">
+          <p>Not the case you want to analyse?</p>
+          <a href="#">Choose another case</a>
+        </div>
       </div>
 
       <!--- Filter opportunities for process explorer --->
@@ -57,6 +61,7 @@
           <img src="/img/filter.svg" class="icon-headline" alt="">
           <h6> Filter options </h6>
         </div>
+        <p class="amount-cases"> Filter the cases we use for our analysis. </p>
         <div id="filter-block" class="sub-content-block">
           <table>
             <tr>
@@ -104,14 +109,13 @@
       </div>
       <!-- buttons  -->
       <div class="button-panel">
-        <button type="button" name="button"> Select another case</button>
         <button id="proceed-analysis-button" type="button" name="button"> Get insights </button>
       </div>
     </div>
     <!-- END 1st VIEW: START SCREEN  -->
 
     <!-- START 2ND VIEW: ANALYSIS SCREEN  -->
-    <div id="analysis-screen" class="panel-main content-block_invisible">
+    <div id="analysis-screen" class="panel-main ">
       <!-- MAIN CONTENT BLOCK -->
       <div class="panel-main__block">
         <!-- header top row with logo -->
@@ -135,13 +139,13 @@
             <img src="/img/tap.svg" class="icon-headline" alt="">
             <h6> Next Steps</h6>
           </div>
-          <p class="amount-cases"> Based on the data these are your suggested best next steps </p>
+          <p class="amount-cases"> Based on our analysis, we suggest you the following actions as your next best steps. </p>
           <!-- SUGGESTED NEXT STEPS -->
           <div id="next-steps-to-do-block" class="sub-content-block">
             <!-- FIRST NEXT STEP -->
-            <div class="to-do-box">
+            <div id="next-step-1" class="to-do-box">
               <div class="checkbox-wrapper">
-                <input type="checkbox" name="vehicle" value="Bike">
+                <input type="radio" name="next-step" value="next-step-1">
               </div>
               <div class="to-do-description">
                 <p class="next-steps-alternative-text"> Alternative 1</p>
@@ -153,9 +157,9 @@
               </div>
             </div>
             <!-- SECOND NEXT STEP -->
-            <div class="to-do-box">
+            <div id="next-step-2" class="to-do-box">
               <div class="checkbox-wrapper">
-                <input type="checkbox" name="vehicle" value="Bike">
+                <input type="radio" name="next-step" value="next-step-2">
               </div>
               <div class="to-do-description">
                 <p class="next-steps-alternative-text"> Alternative 2</p>
@@ -169,13 +173,94 @@
           </div>
         </div>
 
+        <!---TASK DETAIL BOX 1 --->
+        <div id="content-task-detail-1" class="content-block white-box content-block_invisible">
+          <div class="icon-headline-block">
+            <img src="/img/tap.svg" class="icon-headline" alt="">
+            <h6> Resources</h6>
+          </div>
+          <p class="amount-cases"> We found these resources which might support you.</p>
+          <!-- HELPFUL RESOURCES Option 1-->
+          <div id="task-detail-block-1" class="sub-content-block">
+            <!-- FIRST FILE -->
+            <div class="to-do-box">
+              <div class="checkbox-wrapper ">
+                <img class="file-icon" src="/img/excel.svg" alt="">
+              </div>
+              <div class="to-do-description">
+                <a class="file-name"> Busisness-Case-Template.xls </a>
+              </div>
+              <div class="to-do-metric">
+                <h4> 799</h4>
+                <p class="metric-description"> downloads </p>
+              </div>
+            </div>
+            <!-- SECOND FILE -->
+            <div class="to-do-box">
+              <div class="checkbox-wrapper">
+                <img class="file-icon" src="/img/powerpoint.svg" alt="">
+              </div>
+              <div class="to-do-description">
+                <a class="file-name"> Busisness-Case-Pitch-Deck.ppt </a>
+              </div>
+              <div class="to-do-metric">
+                <h4> 555</h4>
+                <p class="metric-description"> downloads </p>
+              </div>
+            </div>
+            <!-- THRID FILE -->
+            <div class="to-do-box">
+              <div class="checkbox-wrapper">
+                <img class="file-icon" src="/img/outlook.svg" alt="">
+              </div>
+              <div class="to-do-description">
+                <a class="file-name"> email-template-business-case.oft </a>
+              </div>
+              <div class="to-do-metric">
+                <h4> 928</h4>
+                <p class="metric-description"> downloads </p>
+              </div>
+            </div>
+          </div>
+          <div class="another-case-panel">
+            <p> Didn't the resources you need? </p>
+            <a href="#"> Ask the an expert from your organization </a>
+          </div>
+        </div>
+
+        <!---TASK DETAIL BOX 2 --->
+        <div id="content-task-detail-2" class="content-block white-box content-block_invisible">
+          <div class="icon-headline-block">
+            <img src="/img/tap.svg" class="icon-headline" alt="">
+            <h6> Resources </h6>
+          </div>
+          <p class="amount-cases"> We found these resources which might support you. </p>
+          <!-- HELPFUL RESOURCES Option 1-->
+          <div id="task-detail-block-2" class="sub-content-block">
+            <!-- FIRST FILE -->
+            <div class="to-do-box">
+              <div class="checkbox-wrapper ">
+                <img class="file-icon" src="/img/pdf.svg" alt="">
+              </div>
+              <div class="to-do-description">
+                <a class="file-name"> Orgchart-manufacturing-industry.pdf </a>
+              </div>
+              <div class="to-do-metric">
+                <h4> 273</h4>
+                <p class="metric-description"> downloads </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+
         <!-- FIND A COLLEAGUE add content-block_invisible to add-->
         <div id="content-block-colleague" class="content-block white-box content-block_invisible">
           <div class="icon-headline-block">
             <img src="/img/employee.svg" class="icon-headline" alt="">
-            <h6> Find Colleagues </h6>
+            <h6> Experts </h6>
           </div>
-          <p class="amount-cases"> These colleagues within your organization have experience taking this step within your configuration </p>
+          <p class="amount-cases"> Based on their experience,  those colleagues might be ablet to help you. </p>
           <!-- CONTACT LIST OF COLLEAGUES -->
           <div class="contact-list">
             <!-- CONTACT 1 -->
@@ -244,7 +329,7 @@
         </div>
 
         <div class="button-panel">
-          <button id="create-task" class="" type="button" name="button"> Create tasks</button>
+          <button id="create-task" class="" type="button" name="button"> Add task to SF</button>
           <button id="find-colleagues" class="" type="button" name="button"> Find colleagues</button>
         </div>
 

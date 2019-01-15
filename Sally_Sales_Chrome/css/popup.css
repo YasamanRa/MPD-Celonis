@@ -53,7 +53,7 @@ h3.blue-headline {
 }
 
 
-/* First View Screen*/
+/* --------First View Screen -----------*/
 #start-screen-logo{
     width: 26%;
     box-sizing: content-box;
@@ -106,6 +106,24 @@ td.bold-table-column {
   width: 120px;
   color: white;
 }
+
+.another-case-panel p{
+  font-size: 12px;
+  color: white;
+  display: inline;
+}
+
+.another-case-panel{
+  text-align: center;
+}
+
+.another-case-panel a{
+  font-size: 12px;
+  color: sandybrown;
+  text-decoration: underline;
+  display: inline;
+}
+
 
 /* Drop down menu styling */
 select.table-2nd-column{
@@ -200,15 +218,15 @@ div.to-do-box div.checkbox-wrapper{
 
 }
 
-div.checkbox-wrapper input[type='checkbox'] {
+div.checkbox-wrapper input[type='radio'] {
     -webkit-appearance:none;
     width:20px;
     height:20px;
     background:white;
-    border-radius:5px;
+    border-radius:10px;
     border:1px solid sandybrown;
 }
-div.checkbox-wrapper input[type='checkbox']:checked {
+div.checkbox-wrapper input[type='radio']:checked {
     background: sandybrown;
 }
 
@@ -285,6 +303,17 @@ div.contact-description p.colleague-contact-details {
 
 div.contact-box h4 {
   margin:0;
+}
+
+/*-------- TASK DETAIL SECTION  -------*/
+
+img.file-icon {
+  width: 60%;
+}
+
+a.file-name {
+  font-size: 14px;
+  color: rgb(0, 95, 178);
 }
 
 /*---------------*/

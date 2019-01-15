@@ -8,7 +8,6 @@ function colleagueClickHandler(e) {
   console.log("colleagueClickHandler()");
   console.log(document);
   var colleagueBlock = document.getElementById("content-block-colleague");
-
   if(colleagueBlock.classList.contains("content-block_invisible")){
     colleagueBlock.classList.remove("content-block_invisible");
   }
@@ -35,6 +34,35 @@ function analyisBackHandler(){
 
   analysisView.classList.add("content-block_invisible");
   startView.classList.remove("content-block_invisible");
+}
+
+function taskDetailHandler(){
+  var taskBox1 = document.getElementById('content-task-detail-1');
+  var taskBox2 = document.getElementById('content-task-detail-2');
+  // check if both are disabled
+  // TO BE IMPLEMENTED
+
+  // 1st click: if task box empty and not displayed yet
+  if( taskBox1.classList.contains("content-block_invisible") && taskBox2.classList.contains("content-block_invisible") ){
+    if(this.id == "next-step-1"){
+      taskBox1.classList.remove("content-block_invisible");
+    }else {
+      taskBox2.classList.remove("content-block_invisible");
+    }
+  }
+  else {
+    if(this.id == "next-step-1"){
+      taskBox1.classList.remove("content-block_invisible");
+      taskBox2.classList.add("content-block_invisible");
+    }else {
+      taskBox2.classList.remove("content-block_invisible");
+      taskBox1.classList.add("content-block_invisible");
+    }
+  }
+
+  // toggle between task boxes
+  // TO BE IMPLEMENTED
+
 }
 
 function taskClickHandler(){
@@ -94,7 +122,10 @@ async function wait(time) {
   document.getElementById('call-action').addEventListener("click", callClickHandler);
   document.getElementById('create-task').addEventListener("click", taskClickHandler);
   document.getElementById("proceed-analysis-button").addEventListener("click", proceedAnalysisHandler);
-  document.getElementById("analyis-back").addEventListener("click", analyisBackHandler)
+  document.getElementById("analyis-back").addEventListener("click", analyisBackHandler);
+  document.getElementById("next-step-1").addEventListener("click", taskDetailHandler);
+  document.getElementById("next-step-2").addEventListener("click", taskDetailHandler);
+
 
 }
 
