@@ -1,8 +1,6 @@
 console.log("popup.js loadeing");
 
 
-
-
 function colleagueClickHandler(e) {
   /* toggle colleague block */
   console.log("colleagueClickHandler()");
@@ -39,8 +37,11 @@ function analyisBackHandler(){
 function taskDetailHandler(){
   var taskBox1 = document.getElementById('content-task-detail-1');
   var taskBox2 = document.getElementById('content-task-detail-2');
-  // check if both are disabled
-  // TO BE IMPLEMENTED
+  var ctaPanel = document.getElementById('cta-panel');
+  // THe first click show Button
+  if( ctaPanel.classList.contains("content-block_invisible")){
+    ctaPanel.classList.remove("content-block_invisible");
+  }
 
   // 1st click: if task box empty and not displayed yet
   if( taskBox1.classList.contains("content-block_invisible") && taskBox2.classList.contains("content-block_invisible") ){
@@ -67,10 +68,21 @@ function taskDetailHandler(){
 
 function taskClickHandler(){
   // Send message
+  var taskFormBox = document.getElementById("add-task-form-box");
+
+  // Hide Button when clicked
+  this.style.display = "none";
+
+  if (taskFormBox.classList.contains("content-block_invisible")){
+    taskFormBox.classList.remove("content-block_invisible");
+  }
+
+  /* COMMUICATION WITH CONTENT SCIPT NOT NEEDED
   chrome.tabs.query({active: true, currentWindow: true}, function(tabs){
       console.log("task message sent");
       chrome.tabs.sendMessage(tabs[0].id,"task");
   });
+  */
 }
 
 function mailClickHandler(){
@@ -113,7 +125,8 @@ async function wait(time) {
   console.log('Popup.js : 10 seconds later');
   console.log(document);
 
-  document.getElementById("find-colleagues").addEventListener('click', colleagueClickHandler);
+  document.getElementsByClassName("find-colleagues")[0].addEventListener('click', colleagueClickHandler);
+  document.getElementsByClassName("find-colleagues")[1].addEventListener('click', colleagueClickHandler);
   console.log("Find colleague event registered");
   console.log("colleague back event registered");
   document.getElementById("sidebar-arrow").addEventListener("click", toggleHandler);
@@ -125,6 +138,7 @@ async function wait(time) {
   document.getElementById("analyis-back").addEventListener("click", analyisBackHandler);
   document.getElementById("next-step-1").addEventListener("click", taskDetailHandler);
   document.getElementById("next-step-2").addEventListener("click", taskDetailHandler);
+  document.getElementById("add-task-button").addEventListener("click", toggleHandler);
 
 
 }

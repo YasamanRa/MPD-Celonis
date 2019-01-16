@@ -108,7 +108,7 @@ td.bold-table-column {
 }
 
 .another-case-panel p{
-  font-size: 12px;
+  font-size: 14px;
   color: white;
   display: inline;
 }
@@ -118,7 +118,7 @@ td.bold-table-column {
 }
 
 .another-case-panel a{
-  font-size: 12px;
+  font-size: 14px;
   color: sandybrown;
   text-decoration: underline;
   display: inline;
@@ -174,6 +174,23 @@ div.button-panel button:hover {
   margin-right: 10px;
 }
 
+.case-number-wrapper{
+  text-align: center;
+  margin-top: 15px;
+  margin-bottom: 15px;
+}
+
+div.case-number-wrapper p {
+  display: inline;
+  color: white;
+  margin: 0;
+}
+div.case-number-wrapper h4 {
+  display: inline;
+  color:white;
+  margin: 0;
+}
+
 /* 2nd view, Analyis and next steps */
 
 /*Put Icon besides headline */
@@ -185,7 +202,7 @@ div.button-panel button:hover {
   display: flex;
 }
 
-.icon-headline-block h6{
+.icon-headline-block h6 {
   margin:0px;
   padding-left: 15px;
 }
@@ -305,7 +322,7 @@ div.contact-box h4 {
   margin:0;
 }
 
-/*-------- TASK DETAIL SECTION  -------*/
+/*-------- TASK DETAIL / RESOURCES SECTION  -------*/
 
 img.file-icon {
   width: 60%;
@@ -314,6 +331,30 @@ img.file-icon {
 a.file-name {
   font-size: 14px;
   color: rgb(0, 95, 178);
+}
+
+/*-------- ADD TASK TO SF SECTION -------*/
+form.task-form input {
+  width: 100%;
+  height: 100%;
+}
+
+.task-form table {
+  font-size: 16px;
+}
+
+.task-form input{
+  font-size: 14px;
+  padding: 5px;
+  color: #6d416d;
+}
+
+form.task-form td {
+  color: white;
+}
+
+#add-task-button{
+  width: 250px;
 }
 
 /*---------------*/

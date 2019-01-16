@@ -49,13 +49,15 @@ function toggle(){
     if(opened){
         iframe.style.transform = "translateX(-35px)";
         viewport.style.opacity = 1;
+        //viewport.style.background = "rgba(176, 196, 223, 1.0)";
         //arrow.removeClass("panel__icon_opened");
         //arrow.addClass("panel__icon");
         opened = false;
     }
     else{
         iframe.style.transform = "translateX(-"+panelWidth+"px)";
-        viewport.style.opacity = 0.3;
+        viewport.style.opacity = 0.2;
+        //viewport.style.background = "rgb(238, 218, 255)";
         //arrow.removeClass("panel__icon");
         //arrow.addClass("panel__icon_opened");
         opened = true;
