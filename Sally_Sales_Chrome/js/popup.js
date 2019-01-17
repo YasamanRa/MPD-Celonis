@@ -1,6 +1,31 @@
 console.log("popup.js loadeing");
 
 
+function resetAnalysisScreen () {
+  // HIDE DIVS
+  var box1 = document.getElementById("content-task-detail-1");
+  var box2 = document.getElementById("content-task-detail-2");
+  var box3 = document.getElementById("add-task-form-box");
+
+  var divsToHide = [box1, box2, box3];
+
+  divsToHide.forEach( function(element){
+    if( !element.classList.contains("content-block_invisible")){
+      element.classList.add("content-block_invisible");
+    }
+  });
+
+  // UNCHECK CHECKBOXES
+  var inputs = document.getElementsByTagName("input");
+
+  for( var i=0; i< inputs.length; i++){
+    if(inputs[i].getAttribute("type")=="radio"){
+      inputs[i].checked = false;
+    }
+  }
+
+}
+
 function colleagueClickHandler(e) {
   /* toggle colleague block */
   console.log("colleagueClickHandler()");
@@ -15,12 +40,21 @@ function colleagueClickHandler(e) {
 
 }
 
-function proceedAnalysisHandler(){
+async function proceedAnalysisHandler(){
+  // reset screen
+  resetAnalysisScreen();
   // hide start screen and show analyis SCREEN
   var startView = document.getElementById("start-screen");
+  var loadView = document.getElementById("load-screen");
   var analysisView = document.getElementById("analysis-screen");
 
+  // FIrst show load screen
   startView.classList.add("content-block_invisible");
+  loadView.classList.remove("content-block_invisible");
+  // Wait for a bit ... We are loading :-)
+  await sleep(5000);
+  // show analyis screen
+  loadView.classList.add("content-block_invisible");
   analysisView.classList.remove("content-block_invisible");
 
 }

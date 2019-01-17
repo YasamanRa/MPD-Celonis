@@ -191,6 +191,26 @@ div.case-number-wrapper h4 {
   margin: 0;
 }
 
+
+/* ------ LOAD SCREEN ----*/
+.load-animation-wrapper {
+  padding-left: 25%;
+  padding-right: 25%;
+  margin-top: 50px;
+}
+
+div.load-animation-wrapper img{
+  width: 100%;
+  opacity: 0.7;
+}
+
+div.load-animation-wrapper h4{
+  color: white;
+  font-weight: 200;
+  font-style: italic;
+
+}
+
 /* 2nd view, Analyis and next steps */
 
 /*Put Icon besides headline */
