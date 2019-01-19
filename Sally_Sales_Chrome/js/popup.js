@@ -2,12 +2,17 @@ console.log("popup.js loadeing");
 
 
 function resetAnalysisScreen () {
+
+  var toShow = document.getElementById("next-steps-to-do-block");
+  toShow.classList.remove("content-block_invisible");
+
   // HIDE DIVS
   var box1 = document.getElementById("content-task-detail-1");
   var box2 = document.getElementById("content-task-detail-2");
   var box3 = document.getElementById("add-task-form-box");
+  var box4 = document.getElementById("content-block-colleague");
 
-  var divsToHide = [box1, box2, box3];
+  var divsToHide = [box1, box2, box3, box4];
 
   divsToHide.forEach( function(element){
     if( !element.classList.contains("content-block_invisible")){
@@ -31,6 +36,10 @@ function colleagueClickHandler(e) {
   console.log("colleagueClickHandler()");
   console.log(document);
 
+  var previousBox1 = document.getElementById("content-task-detail-1");
+  previousBox1.classList.add("content-block_invisible");
+  var previousBox2 = document.getElementById("content-task-detail-2");
+  previousBox2.classList.add("content-block_invisible");
 
   var colleagueBlock = document.getElementById("content-block-colleague");
   if(colleagueBlock.classList.contains("content-block_invisible")){
@@ -73,41 +82,33 @@ function analyisBackHandler(){
 function taskDetailHandler(){
   var taskBox1 = document.getElementById('content-task-detail-1');
   var taskBox2 = document.getElementById('content-task-detail-2');
-  var ctaPanel = document.getElementById('cta-panel');
-  // THe first click show Button
-  if( ctaPanel.classList.contains("content-block_invisible")){
-    ctaPanel.classList.remove("content-block_invisible");
+  var radioButton1 = document.getElementById("next-step-radio-1");
+  var radioButton2 = document.getElementById("next-step-radio-2");
+
+  var previousBox = document.getElementById("next-steps-to-do-block");
+  previousBox.classList.add("content-block_invisible");
+
+  if( radioButton1.checked == true ){
+    taskBox1.classList.remove("content-block_invisible");
+    taskBox2.classList.add("content-block_invisible");
+  }
+  if(radioButton2.checked == true) {
+    taskBox2.classList.remove("content-block_invisible");
+    taskBox1.classList.add("content-block_invisible");
   }
 
-  // 1st click: if task box empty and not displayed yet
-  if( taskBox1.classList.contains("content-block_invisible") && taskBox2.classList.contains("content-block_invisible") ){
-    if(this.id == "next-step-1"){
-      taskBox1.classList.remove("content-block_invisible");
-    }else {
-      taskBox2.classList.remove("content-block_invisible");
-    }
-  }
-  else {
-    if(this.id == "next-step-1"){
-      taskBox1.classList.remove("content-block_invisible");
-      taskBox2.classList.add("content-block_invisible");
-    }else {
-      taskBox2.classList.remove("content-block_invisible");
-      taskBox1.classList.add("content-block_invisible");
-    }
-  }
 
-  // toggle between task boxes
-  // TO BE IMPLEMENTED
+
+
 
 }
 
 function taskClickHandler(){
   // Send message
   var taskFormBox = document.getElementById("add-task-form-box");
-  var ctaPanel = document.getElementById("cta-panel");
-  // Hide Button when clicked
-  ctaPanel.classList.add("content-block_invisible");
+
+  var previousBox = document.getElementById("content-block-colleague");
+  previousBox.classList.add("content-block_invisible");
 
   if (taskFormBox.classList.contains("content-block_invisible")){
     taskFormBox.classList.remove("content-block_invisible");
@@ -147,9 +148,29 @@ function toggleHandler() {
    });
 }
 
+function activateTabHandler(){
+  // get content to activate
+  console.log("Tab Handler Click");
+  var headlineBoxes = document.getElementsByClassName("icon-headline-block");
+  var i;
+
+  document.getElementById("content-task-detail-2").classList.add("content-block_invisible");
+  for( i=0; i < headlineBoxes.length; i++){
+    // if it is visible hide it
+    var tempBox = headlineBoxes[i].nextElementSibling;
+    if(! tempBox.classList.contains("content-block_invisible")){
+      tempBox.classList.add("content-block_invisible");
+    }
+  };
+  console.log(this.nextElementSibling);
+  this.nextElementSibling.classList.remove("content-block_invisible");
+
+}
+
 function sleep(ms) {
   return new Promise(resolve => setTimeout(resolve, ms));
 }
+
 
 async function wait(time) {
   /*
@@ -172,9 +193,14 @@ async function wait(time) {
   document.getElementById('create-task').addEventListener("click", taskClickHandler);
   document.getElementById("proceed-analysis-button").addEventListener("click", proceedAnalysisHandler);
   document.getElementById("analyis-back").addEventListener("click", analyisBackHandler);
-  document.getElementById("next-step-1").addEventListener("click", taskDetailHandler);
-  document.getElementById("next-step-2").addEventListener("click", taskDetailHandler);
+  document.getElementById("to-ressources").addEventListener("click", taskDetailHandler);
   document.getElementById("add-task-button").addEventListener("click", toggleHandler);
+
+  var headlineBoxes = document.getElementsByClassName("icon-headline-block");
+  var i;
+  for( i=0; i < headlineBoxes.length; i++){
+    headlineBoxes[i].addEventListener("click", activateTabHandler);
+  };
 
 
 }

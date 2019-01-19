@@ -33,42 +33,44 @@
         <p>Leverage your sales team's collective cleverness.</p>
       </span>
       <!--- Meta Description of current analyzed lead / opportunity --->
-      <div class="white-box">
-        <div class="icon-headline-block">
+      <div class="box-wrapper">
+        <div class="icon-headline-block-2 white-box">
           <img src="/img/file.svg" class="icon-headline" alt="">
           <h6> Your selected case </h6>
         </div>
-        <div id="description-block" class="sub-content-block">
-          <table>
-            <tr>
-              <td class="bold-table-column"> Type </<td>
-              <td class="round-table-data">Opportunity</<td>
-            </tr>
-            <tr>
-              <td class="bold-table-column"> Account </td>
-              <td class="round-table-data"> Salesforce.com </td>
-            </tr>
-            <tr>
-              <td class="bold-table-column"> Name </td>
-              <td class="round-table-data">salesforce.com - 1200 Widgets</td>
-            </tr>
-          </table>
-        </div>
-        <div class="another-case-panel">
-          <p>Not the case you want to analyze?</p>
-          <a href="#">Choose another case</a>
+        <div class="white-box">
+          <div id="description-block" class="">
+            <table>
+              <tr>
+                <td class="bold-table-column"> Type </<td>
+                <td class="round-table-data">Opportunity</<td>
+              </tr>
+              <tr>
+                <td class="bold-table-column"> Account </td>
+                <td class="round-table-data"> Salesforce.com </td>
+              </tr>
+              <tr>
+                <td class="bold-table-column"> Name </td>
+                <td class="round-table-data">salesforce.com - 1200 Widgets</td>
+              </tr>
+            </table>
+          </div>
+          <div class="another-case-panel">
+            <p>Not the case you want to analyze?</p>
+            <a href="#">Choose another case</a>
+          </div>
         </div>
       </div>
 
       <!--- Filter opportunities for process explorer --->
 
-      <div class="white-box">
+      <div class="box-wrapper content-block_invisible">
         <div class="icon-headline-block">
-          <img src="/img/filter.svg" class="icon-headline" alt="">
+          <img src="/img/filter.svg" class="icon-headline white-box" alt="">
           <h6> Filter options </h6>
         </div>
         <p class="amount-cases"> Filter the cases we use for our analysis. </p>
-        <div id="filter-block" class="sub-content-block">
+        <div id="filter-block" class="white-box">
           <table>
             <tr>
               <td class="bold-table-column"> Industry </<td>
@@ -142,9 +144,7 @@
       <div class="load-animation-wrapper">
         <img src="/img/load-screen.gif" alt="">
       </div>
-      <h4 class="white-font"> Your data is being analyzed. <br> Please be patient for a moment 🦊 </h4>
-
-
+      <h4 class="white-font"> Let me check all closed deals in your company's <br> database to find your best next move </h4>
     </div>
 
 
@@ -158,28 +158,28 @@
           <img class="panel-main__logo" src="/img/logo-app.svg" alt="">
           <img src="/img/home.svg" alt="home" height="">
         </div>
+
         <!--- ANALYSIS--->
-        <div class="content-block white-box">
-          <div class="icon-headline-block">
-            <img src="/img/analysis.svg" class="icon-headline" alt="">
-            <h6> Your Analysis</h6>
+        <div class="content-block box-wrapper">
+          <div class="box-content-block white-box">
+            <p class="amount-cases"> Congratulation! We found 65 comparable closed deals out of 4768 of in your organization! </p>
           </div>
-          <p class="amount-cases"> We found 97 comparable cases that were successfully closed! </p>
+
         </div>
 
         <!---NEXT STEPS BOX--->
-        <div id="content-block-process" class="content-block white-box">
-          <div class="icon-headline-block">
+        <div id="content-block-process" class="content-block box-wrapper">
+          <div class="icon-headline-block white-box">
             <img src="/img/tap.svg" class="icon-headline" alt="">
-            <h6> Select a next step</h6>
+            <h6> 1. Pick your winning move </h6>
           </div>
-          <p class="amount-cases"> Based on our analysis, we suggest you the following actions as your next best steps. Choose a option: </p>
           <!-- SUGGESTED NEXT STEPS -->
-          <div id="next-steps-to-do-block" class="sub-content-block">
+          <div id="next-steps-to-do-block" class="white-box collapsible">
+            <p class="amount-cases"> Based on our analysis, we suggest you the following actions as your next best steps. Choose a option: </p>
             <!-- FIRST NEXT STEP -->
             <div id="next-step-1" class="to-do-box">
               <div class="checkbox-wrapper">
-                <input type="radio" name="next-step" value="next-step-1">
+                <input id="next-step-radio-1" type="radio" name="next-step" value="next-step-1">
               </div>
               <div class="to-do-description">
                 <p class="next-steps-alternative-text"> Alternative 1</p>
@@ -193,7 +193,7 @@
             <!-- SECOND NEXT STEP -->
             <div id="next-step-2" class="to-do-box">
               <div class="checkbox-wrapper">
-                <input type="radio" name="next-step" value="next-step-2">
+                <input id="next-step-radio-2" type="radio" name="next-step" value="next-step-2">
               </div>
               <div class="to-do-description">
                 <p class="next-steps-alternative-text"> Alternative 2</p>
@@ -204,181 +204,184 @@
                 <p class="metric-description"> of cases </p>
               </div>
             </div>
-
-
+            <div class="button-panel">
+              <button id="to-ressources"class="long-button" type="button" name="button"> Find resources</button>
+            </div>
           </div>
         </div>
 
         <!---TASK DETAIL BOX 1 --->
-        <div id="content-task-detail-1" class="content-block white-box content-block_invisible">
-          <div class="icon-headline-block">
+        <div class="content-block box-wrapper">
+          <div class="icon-headline-block white-box ">
             <img src="/img/tap.svg" class="icon-headline" alt="">
-            <h6> Resources that might help you</h6>
+            <h6> 2. Find winning documents </h6>
           </div>
-          <p class="amount-cases"> We found these resources which might support you.</p>
           <!-- HELPFUL RESOURCES Option 1-->
-          <div id="task-detail-block-1" class="sub-content-block">
-            <!-- FIRST FILE -->
-            <div class="to-do-box">
-              <div class="checkbox-wrapper ">
-                <img class="file-icon" src="/img/excel.svg" alt="">
+          <div id="content-task-detail-1" class="white-box content-block_invisible collapsible">
+            <p class="amount-cases"> We found these resources which might support you.</p>
+            <div id="task-detail-block-1" class="">
+              <!-- FIRST FILE -->
+              <div class="to-do-box">
+                <div class="checkbox-wrapper ">
+                  <img class="file-icon" src="/img/excel.svg" alt="">
+                </div>
+                <div class="to-do-description">
+                  <a class="file-name"> Busisness-Case-Template.xls </a>
+                </div>
+                <div class="to-do-metric">
+                  <h4> 799</h4>
+                  <p class="metric-description"> downloads </p>
+                </div>
               </div>
-              <div class="to-do-description">
-                <a class="file-name"> Busisness-Case-Template.xls </a>
+              <!-- SECOND FILE -->
+              <div class="to-do-box">
+                <div class="checkbox-wrapper">
+                  <img class="file-icon" src="/img/powerpoint.svg" alt="">
+                </div>
+                <div class="to-do-description">
+                  <a class="file-name"> Busisness-Case-Pitch-Deck.ppt </a>
+                </div>
+                <div class="to-do-metric">
+                  <h4> 555</h4>
+                  <p class="metric-description"> downloads </p>
+                </div>
               </div>
-              <div class="to-do-metric">
-                <h4> 799</h4>
-                <p class="metric-description"> downloads </p>
-              </div>
-            </div>
-            <!-- SECOND FILE -->
-            <div class="to-do-box">
-              <div class="checkbox-wrapper">
-                <img class="file-icon" src="/img/powerpoint.svg" alt="">
-              </div>
-              <div class="to-do-description">
-                <a class="file-name"> Busisness-Case-Pitch-Deck.ppt </a>
-              </div>
-              <div class="to-do-metric">
-                <h4> 555</h4>
-                <p class="metric-description"> downloads </p>
-              </div>
-            </div>
-            <!-- THRID FILE -->
-            <div class="to-do-box">
-              <div class="checkbox-wrapper">
-                <img class="file-icon" src="/img/outlook.svg" alt="">
-              </div>
-              <div class="to-do-description">
-                <a class="file-name"> email-template-business-case.oft </a>
-              </div>
-              <div class="to-do-metric">
-                <h4> 928</h4>
-                <p class="metric-description"> downloads </p>
-              </div>
-            </div>
-          </div>
-          <div class="another-case-panel">
-            <p> Didn't find the resources you need? </p>
-            <a class="find-colleagues" href="#"> Ask the an expert from your organization </a>
-          </div>
-        </div>
-
-        <!---TASK DETAIL BOX 2 --->
-        <div id="content-task-detail-2" class="content-block white-box content-block_invisible">
-          <div class="icon-headline-block">
-            <img src="/img/tap.svg" class="icon-headline" alt="">
-            <h6> Resources </h6>
-          </div>
-          <p class="amount-cases"> We found these resources which might support you. </p>
-          <!-- HELPFUL RESOURCES Option 1-->
-          <div id="task-detail-block-2" class="sub-content-block">
-            <!-- FIRST FILE -->
-            <div class="to-do-box">
-              <div class="checkbox-wrapper ">
-                <img class="file-icon" src="/img/pdf.svg" alt="">
-              </div>
-              <div class="to-do-description">
-                <a class="file-name"> Orgchart-manufacturing-industry.pdf </a>
-              </div>
-              <div class="to-do-metric">
-                <h4> 273</h4>
-                <p class="metric-description"> downloads </p>
+              <!-- THRID FILE -->
+              <div class="to-do-box">
+                <div class="checkbox-wrapper">
+                  <img class="file-icon" src="/img/outlook.svg" alt="">
+                </div>
+                <div class="to-do-description">
+                  <a class="file-name"> email-template-business-case.oft </a>
+                </div>
+                <div class="to-do-metric">
+                  <h4> 928</h4>
+                  <p class="metric-description"> downloads </p>
+                </div>
               </div>
             </div>
+            <div class="another-case-panel">
+              <p> Didn't find the resources you need? Ask an expert from your organization </p>
+            </div>
+            <div class="button-panel">
+              <button class="find-colleagues long-button" type="button" name="button"> Find an expert </button>
+            </div>
           </div>
-          <div class="another-case-panel">
-            <p> Didn't find the resources you need? </p>
-            <a class="find-colleagues" href="#"> Ask the an expert from your organization </a>
+          <div id="content-task-detail-2" class="white-box collapsible">
+            <p class="amount-cases"> We found these resources which might support you. </p>
+            <!-- HELPFUL RESOURCES Option 2-->
+            <div id="task-detail-block-2" class="">
+              <!-- FIRST FILE -->
+              <div class="to-do-box">
+                <div class="checkbox-wrapper ">
+                  <img class="file-icon" src="/img/pdf.svg" alt="">
+                </div>
+                <div class="to-do-description">
+                  <a class="file-name"> Orgchart-manufacturing-industry.pdf </a>
+                </div>
+                <div class="to-do-metric">
+                  <h4> 273</h4>
+                  <p class="metric-description"> downloads </p>
+                </div>
+              </div>
+            </div>
+            <div class="another-case-panel">
+              <p> Didn't find the resources you need? Ask an expert from your organization </p>
+            </div>
+            <div class="button-panel">
+              <button class="find-colleagues long-button" type="button" name="button"> Find an expert </button>
+            </div>
+          </div>
           </div>
         </div>
 
 
         <!-- FIND A COLLEAGUE add content-block_invisible to add-->
-        <div id="content-block-colleague" class="content-block white-box content-block_invisible">
-          <div class="icon-headline-block">
+        <div  class="content-block box-wrapper ">
+          <div class="icon-headline-block white-box">
             <img src="/img/employee.svg" class="icon-headline" alt="">
-            <h6> Contact an Expert </h6>
+            <h6> 3. Find the right expert </h6>
           </div>
-          <p class="amount-cases"> Based on their experience,  those colleagues might be able to help you. </p>
-          <!-- CONTACT LIST OF COLLEAGUES -->
-          <div class="contact-list">
-            <!-- CONTACT 1 -->
-            <div class="contact-box">
-              <div class="colleague-image-wrapper">
-                <img src="img/colleague.jpg" class="colleague-foto" alt="">
+          <div id="content-block-colleague" class="white-box content-block_invisible collapsible">
+            <p class="amount-cases"> Based on their experience,  those colleagues might be able to help you. </p>
+            <!-- CONTACT LIST OF COLLEAGUES -->
+            <div class="contact-list">
+              <!-- CONTACT 1 -->
+              <div class="contact-box">
+                <div class="colleague-image-wrapper">
+                  <img src="img/colleague.jpg" class="colleague-foto" alt="">
+                </div>
+                <div class="contact-description">
+                  <p class="colleague-name"> Yasa Mama, Sales Executive </p>
+                  <span> <i class="fas fa-phone-volume"></i>
+                    <p id="call-action" class="colleague-contact-details"> +49 0172 9293 012 </p>
+                  </span>
+                  <span> <i class="fas fa-envelope"></i>
+                    <p id="mail-action" class="colleague-contact-details"> yasa.mama@global-tech.com </p>
+                  </span>
+                </div>
+                <div class="to-do-metric">
+                  <h4> 37</h4>
+                  <p class="metric-description"> times </p>
+                  <p class="metric-description"> done </p>
+                </div>
               </div>
-              <div class="contact-description">
-                <p class="colleague-name"> Yasa Mama, Sales Executive </p>
-                <span> <i class="fas fa-phone-volume"></i>
-                  <p id="call-action" class="colleague-contact-details"> +49 0172 9293 012 </p>
-                </span>
-                <span> <i class="fas fa-envelope"></i>
-                  <p id="mail-action" class="colleague-contact-details"> yasa.mama@global-tech.com </p>
-                </span>
+              <!-- CONTACT 2 -->
+              <div class="contact-box">
+                <div class="colleague-image-wrapper">
+                  <img src="img/colleague3.jpg" class="colleague-foto" alt="">
+                </div>
+                <div class="contact-description">
+                  <p class="colleague-name"> Matthis Proud, Sales Executive </p>
+                  <span> <i class="fas fa-phone-volume"></i>
+                    <p class="colleague-contact-details"> +49 0172 9293 012 </p>
+                  </span>
+                  <span> <i class="fas fa-envelope"></i>
+                    <p class="colleague-contact-details"> matthis.proud@global-tech.com </p>
+                  </span>
+                </div>
+                <div class="to-do-metric">
+                  <h4> 24</h4>
+                  <p class="metric-description"> times </p>
+                  <p class="metric-description"> done </p>
+                </div>
               </div>
-              <div class="to-do-metric">
-                <h4> 37</h4>
-                <p class="metric-description"> times </p>
-                <p class="metric-description"> done </p>
+              <!-- CONTACT 3 -->
+              <div class="contact-box">
+                <div class="colleague-image-wrapper">
+                  <img src="img/colleague2.jpg" class="colleague-foto" alt="">
+                </div>
+                <div class="contact-description">
+                  <p class="colleague-name"> Kaya Maya, Sales Executive </p>
+                  <span> <i class="fas fa-phone-volume"></i>
+                    <p class="colleague-contact-details"> +49 0172 9293 012 </p>
+                  </span>
+                  <span> <i class="fas fa-envelope"></i>
+                    <p class="colleague-contact-details"> kaya.maya@global-tech.com </p>
+                  </span>
+                </div>
+                <div class="to-do-metric">
+                  <h4> 18</h4>
+                  <p class="metric-description"> times </p>
+                  <p class="metric-description"> done </p>
+                </div>
               </div>
             </div>
-            <!-- CONTACT 2 -->
-            <div class="contact-box">
-              <div class="colleague-image-wrapper">
-                <img src="img/colleague3.jpg" class="colleague-foto" alt="">
-              </div>
-              <div class="contact-description">
-                <p class="colleague-name"> Matthis Proud, Sales Executive </p>
-                <span> <i class="fas fa-phone-volume"></i>
-                  <p class="colleague-contact-details"> +49 0172 9293 012 </p>
-                </span>
-                <span> <i class="fas fa-envelope"></i>
-                  <p class="colleague-contact-details"> matthis.proud@global-tech.com </p>
-                </span>
-              </div>
-              <div class="to-do-metric">
-                <h4> 24</h4>
-                <p class="metric-description"> times </p>
-                <p class="metric-description"> done </p>
-              </div>
-            </div>
-            <!-- CONTACT 3 -->
-            <div class="contact-box">
-              <div class="colleague-image-wrapper">
-                <img src="img/colleague2.jpg" class="colleague-foto" alt="">
-              </div>
-              <div class="contact-description">
-                <p class="colleague-name"> Kaya Maya, Sales Executive </p>
-                <span> <i class="fas fa-phone-volume"></i>
-                  <p class="colleague-contact-details"> +49 0172 9293 012 </p>
-                </span>
-                <span> <i class="fas fa-envelope"></i>
-                  <p class="colleague-contact-details"> kaya.maya@global-tech.com </p>
-                </span>
-              </div>
-              <div class="to-do-metric">
-                <h4> 18</h4>
-                <p class="metric-description"> times </p>
-                <p class="metric-description"> done </p>
-              </div>
+            <div id="" class="button-panel ">
+              <button id="create-task" class="long-button" type="button" name="button"> Create a task </button>
             </div>
 
           </div>
+        </div>
 
-        </div>
-        <!-- BUTTON PANEL FOR CALL TO ACTION BUTTON ADD TASK -->
-        <div id="cta-panel" class="button-panel content-block_invisible">
-          <button id="create-task" class="" type="button" name="button"> Add task to SF</button>
-        </div>
 
         <!-- ADD TASK TO SF BOX -->
-        <div id="add-task-form-box" class="content-block white-box  content-block_invisible">
-          <div class="icon-headline-block">
+        <div  class="content-block box-wrapper">
+          <div class="icon-headline-block white-box">
             <img src="/img/analysis.svg" class="icon-headline" alt="">
-            <h6> Add Task to Salesforce</h6>
+            <h6> 4. Add move to Salesforce</h6>
           </div>
-          <div class="">
+          <div id="add-task-form-box" class="white-box content-block_invisible collapsible">
             <form  class="task-form" action="" method="">
               <table>
                 <tr>
@@ -400,13 +403,10 @@
               </table>
             </form>
             <div class="button-panel">
-              <button id="add-task-button" type="button" name="button"> Add Task to Salesforce</button>
+              <button class="long-button" id="add-task-button" type="button" name="button"> Add Task to Salesforce</button>
             </div>
           </div>
-
         </div>
-
-
       </div>
     </div>
   </div>

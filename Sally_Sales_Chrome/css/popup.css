@@ -74,9 +74,12 @@ h3.blue-headline {
 .white-box {
   background-color: #fff1f129;
   opacity: 1;
-  padding: 20px;
-  margin: 5% 0%;
+  padding: 10px 20px;
   border-bottom: white 1px solid;
+}
+
+.box-wrapper{
+  margin: 1% 0%;
 }
 
 /* styled Table cell with meta information*/
@@ -148,6 +151,7 @@ h6 {
 /* Button panel */
 .button-panel {
   text-align: center;
+  margin-top: 10px;
 }
 
 div.button-panel button {
@@ -219,11 +223,11 @@ h4.white-font{
   height: 20px;
 }
 
-.icon-headline-block {
+.icon-headline-block, .icon-headline-block-2 {
   display: flex;
 }
 
-.icon-headline-block h6 {
+.icon-headline-block h6, .icon-headline-block-2 h6 {
   margin:0px;
   padding-left: 15px;
 }
@@ -234,7 +238,7 @@ p.amount-cases {
   font-weight: 100;
   font-size: 18px;
   margin-top:5px;
-  margin-bottom:0;
+  margin-bottom:5px;
 }
 
 /*next steps / to do section */
@@ -298,6 +302,7 @@ p.metric-description {
 
 .contact-list {
   margin-top: 15px;
+  margin-bottom:10px;
   box-shadow: 3px 3px 7px 0px #33333387;
 }
 
@@ -374,7 +379,7 @@ form.task-form td {
   color: white;
 }
 
-#add-task-button{
+#add-task-button, {
   width: 250px;
 }
 
@@ -388,11 +393,18 @@ form.task-form td {
 }
 
 .content-block_visible {
-  display: block;
+  overflow: hidden;
+  transition: max-height 0.2s ease-out;
 }
 
+
 .content-block_invisible {
-  display: none;
+  /*display:none;*/
+  overflow: hidden;
+  max-height: 0;
+  padding: 0;
+  border: 0;
+  transition: max-height 0.2s ease-out;
 }
 
 
@@ -401,7 +413,7 @@ p.meta-description-colleague {
 }
 
 #content-block-colleague{
-  margin-top:25px;
+  margin-top:0px;
 }
 
 div#content-block-colleague h5{
