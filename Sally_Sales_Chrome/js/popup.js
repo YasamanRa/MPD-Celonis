@@ -30,6 +30,8 @@ function colleagueClickHandler(e) {
   /* toggle colleague block */
   console.log("colleagueClickHandler()");
   console.log(document);
+
+
   var colleagueBlock = document.getElementById("content-block-colleague");
   if(colleagueBlock.classList.contains("content-block_invisible")){
     colleagueBlock.classList.remove("content-block_invisible");
@@ -103,9 +105,9 @@ function taskDetailHandler(){
 function taskClickHandler(){
   // Send message
   var taskFormBox = document.getElementById("add-task-form-box");
-
+  var ctaPanel = document.getElementById("cta-panel");
   // Hide Button when clicked
-  this.style.display = "none";
+  ctaPanel.classList.add("content-block_invisible");
 
   if (taskFormBox.classList.contains("content-block_invisible")){
     taskFormBox.classList.remove("content-block_invisible");
