@@ -203,6 +203,10 @@ div.case-number-wrapper h4 {
   margin-top: 50px;
 }
 
+#load-animation{
+  border-radius:100%;
+}
+
 div.load-animation-wrapper img{
   width: 100%;
   opacity: 1;
@@ -217,6 +221,12 @@ h4.white-font{
 }
 
 /* 2nd view, Analyis and next steps */
+
+#analysis-info-box{
+  margin: 0;
+  padding-left: 20px;
+  padding-right: 20px;
+}
 
 /*Put Icon besides headline */
 .icon-headline{
@@ -524,7 +534,6 @@ hr {
   align-items: center;
   justify-content: space-between;
   height: 40px;
-  margin-bottom: 5px;
   margin-top:20px;
 }
 
