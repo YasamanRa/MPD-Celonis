@@ -83,7 +83,10 @@ h3.blue-headline {
 }
 
 .box-wrapper{
-  margin: 1% 0%;
+  margin-left: 0%;
+  margin-right: 0%;
+  margin-top: 0%;
+  margin-bottom: 1%;
 }
 
 /* styled Table cell with meta information*/
@@ -231,6 +234,31 @@ h4.white-font{
   margin: 0;
   padding-left: 20px;
   padding-right: 20px;
+}
+
+.sally-assistant-wrapper {
+  display:flex;
+  margin:0;
+  margin-top: 15px;
+}
+
+.speech-bubble {
+  padding-left: 10px;
+  padding-right: 10px;
+  margin-right: 10px;
+  margin-bottom: 10px;
+  background-color: white;
+  border-radius: 10px;
+}
+
+.speech-bubble p {
+  color: black;
+  font-size: 17;
+  margin: 5;
+}
+
+.sally-image img{
+  height: 50px;
 }
 
 /*Put Icon besides headline */
@@ -414,7 +442,7 @@ form.task-form td {
 }
 
 .content-block {
-  padding-top:10px;
+  padding-top: 0px;
 }
 
 .content-block_visible {
@@ -429,6 +457,7 @@ form.task-form td {
   max-height: 0;
   padding: 0;
   border: 0;
+  margin:0;
   transition: max-height 0.2s ease-out;
 }
 

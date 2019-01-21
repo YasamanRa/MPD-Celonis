@@ -49,6 +49,11 @@ function colleagueClickHandler(e) {
     colleagueBlock.classList.add("content-block_invisible");
   }
 
+  var sally2 = document.getElementById("sally2");
+  var sally3 = document.getElementById("sally3");
+  sally2.classList.add("content-block_invisible");
+  sally3.classList.remove("content-block_invisible");
+
 }
 
 async function proceedAnalysisHandler(){
@@ -97,10 +102,10 @@ function taskDetailHandler(){
     taskBox1.classList.add("content-block_invisible");
   }
 
-
-
-
-
+  var sally1 = document.getElementById("sally1");
+  var sally2 = document.getElementById("sally2");
+  sally1.classList.add("content-block_invisible");
+  sally2.classList.remove("content-block_invisible");
 }
 
 function taskClickHandler(){
@@ -114,12 +119,10 @@ function taskClickHandler(){
     taskFormBox.classList.remove("content-block_invisible");
   }
 
-  /* COMMUICATION WITH CONTENT SCIPT NOT NEEDED
-  chrome.tabs.query({active: true, currentWindow: true}, function(tabs){
-      console.log("task message sent");
-      chrome.tabs.sendMessage(tabs[0].id,"task");
-  });
-  */
+  var sally3 = document.getElementById("sally3");
+  var sally4 = document.getElementById("sally4");
+  sally3.classList.add("content-block_invisible");
+  sally4.classList.remove("content-block_invisible");
 }
 
 function mailClickHandler(){
@@ -162,8 +165,10 @@ function activateTabHandler(){
       tempBox.classList.add("content-block_invisible");
     }
   };
+
   console.log(this.nextElementSibling);
   this.nextElementSibling.classList.remove("content-block_invisible");
+
 
 }
 
