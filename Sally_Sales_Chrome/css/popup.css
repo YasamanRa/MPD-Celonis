@@ -39,6 +39,10 @@ a, button {
   cursor: pointer;
 }
 
+button{
+  border-width: 3px;
+  border-color: white;
+}
 
 i {
   font-size: 14px;
@@ -88,6 +92,7 @@ h3.blue-headline {
   border-radius: 17px;
   padding: 5px 0px;
   text-align: center;
+  font-weight: 600;
 
 }
 
@@ -105,7 +110,7 @@ td {
 }
 
 td.bold-table-column {
-  font-weight: 300;
+  font-weight: 600;
   width: 120px;
   color: white;
 }
@@ -122,7 +127,7 @@ td.bold-table-column {
 
 .another-case-panel a{
   font-size: 14px;
-  color: sandybrown;
+  color: #f0ff3e;
   text-decoration: underline;
   display: inline;
 }
@@ -144,7 +149,7 @@ h6 {
   font-size: 20;
   text-transform: uppercase;
   margin-top: 5;
-  font-weight: 300;
+  font-weight: 500;
   margin-bottom: 10px;
 }
 
@@ -285,7 +290,7 @@ div.checkbox-wrapper input[type='radio'] {
     height:20px;
     background:white;
     border-radius:10px;
-    border:1px solid sandybrown;
+    border:3px solid sandybrown;
 }
 div.checkbox-wrapper input[type='radio']:checked {
     background: sandybrown;
@@ -342,12 +347,13 @@ div.contact-box {
 
 div.contact-description p.colleague-name {
   margin:0;
-  font-weight: 500;
+  font-weight: 600;
   font-size: 16px;
 }
 
 div.contact-description span{
   display: block;
+  font-weight: 500;
 }
 
 div.contact-description p.colleague-position {
@@ -374,7 +380,7 @@ img.file-icon {
 }
 
 a.file-name {
-  font-size: 14px;
+  font-size: 16px;
   color: rgb(0, 95, 178);
 }
 
