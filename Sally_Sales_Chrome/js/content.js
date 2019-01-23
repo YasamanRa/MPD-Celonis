@@ -10,9 +10,15 @@ console.log("content.js start");
 chrome.runtime.onMessage.addListener(function(msg, sender){
 
     if(msg == "toggle"){
+        // First time of setup
         console.log("chrome.runtime.onMessage.addListener");
         toggle();
-        //optimizeUI();
+
+    }
+
+    if(msg == "toggle-from-popup"){
+        console.log("chrome.runtime.onMessage.addListener");
+        toggle();
     }
 
     if(msg == "task"){

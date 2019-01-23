@@ -3,22 +3,19 @@ console.log("popup.js loadeing");
 
 function resetAnalysisScreen () {
 
-  var toShow = document.getElementById("next-steps-to-do-block");
-  toShow.classList.remove("content-block_invisible");
+  $("#next-steps-to-do-block").show();
+  $("#sally1").show();
+
 
   // HIDE DIVS
-  var box1 = document.getElementById("content-task-detail-1");
-  var box2 = document.getElementById("content-task-detail-2");
-  var box3 = document.getElementById("add-task-form-box");
-  var box4 = document.getElementById("content-block-colleague");
+  $("#content-task-detail-1").hide();
+  $("#content-task-detail-2").hide();
+  $("#add-task-form-box").hide();
+  $("#content-block-colleague").hide();
+  $("#sally2").hide();
+  $("#sally3").hide();
+  $("#sally4").hide();
 
-  var divsToHide = [box1, box2, box3, box4];
-
-  divsToHide.forEach( function(element){
-    if( !element.classList.contains("content-block_invisible")){
-      element.classList.add("content-block_invisible");
-    }
-  });
 
   // UNCHECK CHECKBOXES
   var inputs = document.getElementsByTagName("input");
@@ -36,93 +33,67 @@ function colleagueClickHandler(e) {
   console.log("colleagueClickHandler()");
   console.log(document);
 
-  var previousBox1 = document.getElementById("content-task-detail-1");
-  previousBox1.classList.add("content-block_invisible");
-  var previousBox2 = document.getElementById("content-task-detail-2");
-  previousBox2.classList.add("content-block_invisible");
 
-  var colleagueBlock = document.getElementById("content-block-colleague");
-  if(colleagueBlock.classList.contains("content-block_invisible")){
-    colleagueBlock.classList.remove("content-block_invisible");
-  }
-  else {
-    colleagueBlock.classList.add("content-block_invisible");
-  }
+  $("#content-task-detail-1").slideUp();
+  $("#content-task-detail-2").slideUp();
 
-  var sally2 = document.getElementById("sally2");
-  var sally3 = document.getElementById("sally3");
-  sally2.classList.add("content-block_invisible");
-  sally3.classList.remove("content-block_invisible");
+  $("#content-block-colleague").slideToggle();
+
+  $("#sally2").hide();
+  $("#sally3").fadeIn(1000);
+
 
 }
 
 async function proceedAnalysisHandler(){
-  // reset screen
   resetAnalysisScreen();
   // hide start screen and show analyis SCREEN
-  var startView = document.getElementById("start-screen");
-  var loadView = document.getElementById("load-screen");
-  var analysisView = document.getElementById("analysis-screen");
 
-  // FIrst show load screen
-  startView.classList.add("content-block_invisible");
-  loadView.classList.remove("content-block_invisible");
+  $("#start-screen").hide();
+  $("#load-screen").show();
+
   // Wait for a bit ... We are loading :-)
-  await sleep(5000);
+  await sleep(2000);
   // show analyis screen
-  loadView.classList.add("content-block_invisible");
-  analysisView.classList.remove("content-block_invisible");
+  $("#load-screen").hide();
+  $("#analysis-screen").show();
 
 }
 
 function analyisBackHandler(){
   // hide analysis screen and show start SCREEN
-  var startView = document.getElementById("start-screen");
-  var analysisView = document.getElementById("analysis-screen");
-
-  analysisView.classList.add("content-block_invisible");
-  startView.classList.remove("content-block_invisible");
+  $("#start-screen").show();
+  $("#analysis-screen").hide();
 }
 
 function taskDetailHandler(){
-  var taskBox1 = document.getElementById('content-task-detail-1');
-  var taskBox2 = document.getElementById('content-task-detail-2');
+
   var radioButton1 = document.getElementById("next-step-radio-1");
   var radioButton2 = document.getElementById("next-step-radio-2");
 
-  var previousBox = document.getElementById("next-steps-to-do-block");
-  previousBox.classList.add("content-block_invisible");
+  // hide first sectionn
+  $("#next-steps-to-do-block").slideToggle();
 
   if( radioButton1.checked == true ){
-    taskBox1.classList.remove("content-block_invisible");
-    taskBox2.classList.add("content-block_invisible");
+    $('#content-task-detail-1').slideToggle();
+
   }
   if(radioButton2.checked == true) {
-    taskBox2.classList.remove("content-block_invisible");
-    taskBox1.classList.add("content-block_invisible");
+    $('#content-task-detail-2').slideToggle();
   }
 
-  var sally1 = document.getElementById("sally1");
-  var sally2 = document.getElementById("sally2");
-  sally1.classList.add("content-block_invisible");
-  sally2.classList.remove("content-block_invisible");
+  $("#sally1").hide();
+  $("#sally2").fadeIn(1000);
 }
 
 function taskClickHandler(){
   // Send message
-  var taskFormBox = document.getElementById("add-task-form-box");
+  $("#add-task-form-box").slideToggle();
 
-  var previousBox = document.getElementById("content-block-colleague");
-  previousBox.classList.add("content-block_invisible");
+  $("#content-block-colleague").slideToggle();
 
-  if (taskFormBox.classList.contains("content-block_invisible")){
-    taskFormBox.classList.remove("content-block_invisible");
-  }
-
-  var sally3 = document.getElementById("sally3");
-  var sally4 = document.getElementById("sally4");
-  sally3.classList.add("content-block_invisible");
-  sally4.classList.remove("content-block_invisible");
+  $("#sally3").hide();
+  $("#sally4").fadeIn(1000);
 }
 
 function mailClickHandler(){
@@ -146,30 +117,25 @@ function callClickHandler(){
 function toggleHandler() {
     chrome.tabs.query({currentWindow: true, active: true}, function (tabs){
     var activeTab = tabs[0];
-    chrome.tabs.sendMessage(activeTab.id, "toggle");
+    chrome.tabs.sendMessage(activeTab.id, "toggle-from-popup");
     console.log("side arrow button clicked");
    });
 }
 
 function activateTabHandler(){
-  // get content to activate
+  // get content to activate and hide all other content
   console.log("Tab Handler Click");
-  var headlineBoxes = document.getElementsByClassName("icon-headline-block");
-  var i;
+  $(".sally-assistant-wrapper").hide();
+  $("div.icon-headline-block + div").slideUp();
+  // Show content box under the tab
+  $(this).siblings("div").first().slideDown();
+  // Show sally
+  $(this).parent("div").prev("div").fadeIn(1000);
 
-  document.getElementById("content-task-detail-2").classList.add("content-block_invisible");
-  for( i=0; i < headlineBoxes.length; i++){
-    // if it is visible hide it
-    var tempBox = headlineBoxes[i].nextElementSibling;
-    if(! tempBox.classList.contains("content-block_invisible")){
-      tempBox.classList.add("content-block_invisible");
-    }
-  };
+}
 
-  console.log(this.nextElementSibling);
-  this.nextElementSibling.classList.remove("content-block_invisible");
-
-
+function lastActionHandler(){
+  toggleHandler();
 }
 
 function sleep(ms) {
@@ -199,7 +165,7 @@ async function wait(time) {
   document.getElementById("proceed-analysis-button").addEventListener("click", proceedAnalysisHandler);
   document.getElementById("analyis-back").addEventListener("click", analyisBackHandler);
   document.getElementById("to-ressources").addEventListener("click", taskDetailHandler);
-  document.getElementById("add-task-button").addEventListener("click", toggleHandler);
+  document.getElementById("add-task-button").addEventListener("click", lastActionHandler);
 
   var headlineBoxes = document.getElementsByClassName("icon-headline-block");
   var i;
@@ -211,7 +177,7 @@ async function wait(time) {
 }
 
 // hacky solution to wait long enough until DOM of popup is completely loaded
-wait(13000);
+wait(10000);
 
 
 
