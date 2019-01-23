@@ -58,6 +58,15 @@ h3.blue-headline {
 
 
 /* --------First View Screen -----------*/
+
+#start-header-wrapper{
+  margin-top: 200px;
+}
+
+#case-description-wrapper{
+  display: none;
+}
+
 #start-screen-logo{
     width: 26%;
     box-sizing: content-box;

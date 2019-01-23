@@ -53,7 +53,7 @@ async function proceedAnalysisHandler(){
   $("#load-screen").show();
 
   // Wait for a bit ... We are loading :-)
-  await sleep(2000);
+  await sleep(4000);
   // show analyis screen
   $("#load-screen").hide();
   $("#analysis-screen").show();
@@ -134,6 +134,11 @@ function activateTabHandler(){
 
 }
 
+function startAnimation() {
+  $("#start-header-wrapper").animate({ marginTop: '0px', opacity: 1 }, 800) ;
+  $("#case-description-wrapper").delay(900).fadeIn();
+}
+
 function lastActionHandler(){
   toggleHandler();
 }
@@ -142,6 +147,14 @@ function sleep(ms) {
   return new Promise(resolve => setTimeout(resolve, ms));
 }
 
+function goToHomeScreen(){
+  resetAnalysisScreen();
+  $("#analysis-screen").hide();
+  $("#start-header-wrapper").css('margin-top',200);
+  $("#case-description-wrapper").hide();
+  $("#start-screen").fadeIn();
+
+}
 
 async function wait(time) {
   /*
@@ -166,6 +179,9 @@ async function wait(time) {
   document.getElementById("analyis-back").addEventListener("click", analyisBackHandler);
   document.getElementById("to-ressources").addEventListener("click", taskDetailHandler);
   document.getElementById("add-task-button").addEventListener("click", lastActionHandler);
+
+  $("#start-header-wrapper").mouseover(startAnimation);
+  $("#home").click(goToHomeScreen);
 
   var headlineBoxes = document.getElementsByClassName("icon-headline-block");
   var i;

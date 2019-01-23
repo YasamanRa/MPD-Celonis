@@ -24,110 +24,62 @@
   <div class="panel">
     <!-- START 1st VIEW: START SCREEN  -->
     <div id="start-screen" class="panel-main">
-      <!-- big logo -->
-      <div class="logo-wrapper">
-        <img id="start-screen-logo" src="/img/logo-star.png" alt="">
-      </div>
-      <!-- claim of sally sales -->
-      <span id="slogan-span">
-        <p>Leverage your sales team's collective cleverness.</p>
-      </span>
-      <!--- Meta Description of current analyzed lead / opportunity --->
-      <div class="box-wrapper">
-        <div class="icon-headline-block-2 white-box">
-          <img src="/img/file.svg" class="icon-headline" alt="">
-          <h6> Your selected case </h6>
+      <div id="start-header-wrapper">
+        <!-- big logo -->
+        <div class="logo-wrapper">
+          <img id="start-screen-logo" src="/img/logo-star.png" alt="">
         </div>
-        <div class="white-box">
-          <div id="description-block" class="">
-            <table>
-              <tr>
-                <td class="bold-table-column"> Type </<td>
-                <td class="round-table-data">Opportunity</<td>
-              </tr>
-              <tr>
-                <td class="bold-table-column"> Account </td>
-                <td class="round-table-data"> Salesforce.com </td>
-              </tr>
-              <tr>
-                <td class="bold-table-column"> Name </td>
-                <td class="round-table-data">salesforce.com - 1200 Widgets</td>
-              </tr>
-            </table>
+        <!-- claim of sally sales -->
+        <span id="slogan-span">
+          <p>Leverage your sales team's collective cleverness.</p>
+        </span>
+      </div>
+
+      <div id="case-description-wrapper">
+        <!--- Meta Description of current analyzed lead / opportunity --->
+        <div class="box-wrapper ">
+          <div class="icon-headline-block-2 white-box">
+            <img src="/img/file.svg" class="icon-headline" alt="">
+            <h6> Your selected case </h6>
           </div>
-          <div class="another-case-panel">
-            <p>Not the case you want to analyze?</p>
-            <a href="#">Choose another case</a>
+          <div class="white-box">
+            <div id="description-block" class="">
+              <table>
+                <tr>
+                  <td class="bold-table-column"> Type </<td>
+                  <td class="round-table-data">Opportunity</<td>
+                </tr>
+                <tr>
+                  <td class="bold-table-column"> Account </td>
+                  <td class="round-table-data"> BMW Group </td>
+                </tr>
+                <tr>
+                  <td class="bold-table-column"> Name </td>
+                  <td class="round-table-data"> Premium package - 80 accounts </td>
+                </tr>
+              </table>
+            </div>
+            <div class="another-case-panel">
+              <p>Not the case you want to analyze?</p>
+              <a href="#">Choose another case</a>
+            </div>
           </div>
         </div>
-      </div>
 
-      <!--- Filter opportunities for process explorer --->
-
-      <div class="box-wrapper content-block_invisible">
-        <div class="icon-headline-block">
-          <img src="/img/filter.svg" class="icon-headline white-box" alt="">
-          <h6> Filter options </h6>
+        <!-- AMOUNT OF CASES FOR FILTER INDICATOR -->
+        <div class="case-number-wrapper">
+          <div class="counter" data-count="150">
+            <h4>70</h4>
+            <p>comparable cases estimated for your analysis </p>
+          </div>
         </div>
-        <p class="amount-cases"> Filter the cases we use for our analysis. </p>
-        <div id="filter-block" class="white-box">
-          <table>
-            <tr>
-              <td class="bold-table-column"> Industry </<td>
-              <td>
-                <select class="table-2nd-column">
-                  <optgroup label="">
-                    <option value="Manufacturing">Manufacturing</option>
-                    <option value="Pharma">Pharma</option>
-                    <option value="Biotechnology">Biotechnology</option>
-                    <option value="Entertainement">Entertainment</option>
-                  </optgroup>
-                </select>
-              </td>
-            </tr>
-            <tr>
-              <td class="bold-table-column"> Company Size </<td>
-              <td>
-                <select class="table-2nd-column">
-                  <optgroup label="">
-                    <option value="Small">Small</option>
-                    <option value="Medium">Medium</option>
-                    <option value="Large">Large</option>
-                  </optgroup>
-                </select>
-              </td>
-            </tr>
-            <tr>
-              <td class="bold-table-column"> Region </<td>
-              <td>
 
-                <select class="table-2nd-column">
-                  <optgroup label="">
-                    <option value="Large">EMEA</option>
-                    <option value="Medium">NORAM</option>
-                    <option value="">APAC</option>
-                    <option value="">LATAM</option>
-                  </optgroup>
-                </select>
-
-              </td>
-            </tr>
-          </table>
+        <!-- buttons  -->
+        <div class="button-panel">
+          <button id="proceed-analysis-button" type="button" name="button"> Get insights </button>
         </div>
       </div>
 
-      <!-- AMOUNT OF CASES FOR FILTER INDICATOR -->
-      <div class="case-number-wrapper">
-        <div class="counter" data-count="150">
-          <h4>70</h4>
-          <p>comparable cases estimated for your analysis </p>
-        </div>
-      </div>
-
-      <!-- buttons  -->
-      <div class="button-panel">
-        <button id="proceed-analysis-button" type="button" name="button"> Get insights </button>
-      </div>
     </div>
     <!-- END 1st VIEW: START SCREEN  -->
 
@@ -156,7 +108,7 @@
         <div class="panel-main__top">
           <a id="analyis-back" href="#"><img src="/img/left-arrow.svg" alt="back"></a>
           <img class="panel-main__logo" src="/img/logo-app.svg" alt="">
-          <img src="/img/home.svg" alt="home" height="">
+          <img id="home" src="/img/home.svg" alt="home" height="">
         </div>
 
         <!--- ANALYSIS
@@ -414,7 +366,7 @@
                 </tr>
                 <tr>
                   <td> Related to</td>
-                  <td><input type="text" name="" value="salesforce.com - 1200 Widgets"> </td>
+                  <td><input type="text" name="" value="BMW Group - Premium package - 80 accounts"> </td>
                 </tr>
               </table>
             </form>
