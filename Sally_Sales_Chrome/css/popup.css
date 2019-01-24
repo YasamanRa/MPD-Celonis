@@ -255,20 +255,21 @@ h4.white-font{
 
 .speech-bubble {
   margin-left: 50px;
-  background-color: white;
+  /*background-color: white;*/
   border-radius: 10px;
 }
 
 .speech-bubble p {
   padding: 10px;
-  color: black;
-  font-size: 17;
+  color: white;
+  font-size: 22px;
   margin:0;
+  text-align: center;
 }
 
 .sally-image img{
   height: 50px;
-  margin-top: 5px;
+  margin-top: 0px;
 }
 
 .sally-image{

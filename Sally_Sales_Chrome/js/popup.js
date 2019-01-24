@@ -53,7 +53,7 @@ async function proceedAnalysisHandler(){
   $("#load-screen").show();
 
   // Wait for a bit ... We are loading :-)
-  await sleep(4000);
+  await sleep(3000);
   // show analyis screen
   $("#load-screen").hide();
   $("#analysis-screen").show();
