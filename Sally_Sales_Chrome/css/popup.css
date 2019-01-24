@@ -91,6 +91,13 @@ h3.blue-headline {
   border-bottom: white 1px solid;
 }
 
+.white-box-headline {
+  background-color: #fff1f166;
+  opacity: 1;
+  padding: 10px 20px;
+  border-bottom: white 1px solid;
+}
+
 .box-wrapper{
   margin-left: 0%;
   margin-right: 0%;
@@ -220,6 +227,10 @@ div.case-number-wrapper h4 {
   margin-top: 50px;
 }
 
+#load-claim{
+  display:none;
+}
+
 #load-animation{
   border-radius:100%;
 }
@@ -248,7 +259,7 @@ h4.white-font{
 .sally-assistant-wrapper {
   overflow: hidden;
   margin:0;
-  margin-top: 15px;
+  margin-top: 5px;
   margin-bottom: 15px;
   width: 100%;
 }
@@ -260,7 +271,7 @@ h4.white-font{
 }
 
 .speech-bubble p {
-  padding: 10px;
+  padding: 0px 5px;
   color: white;
   font-size: 22px;
   margin:0;

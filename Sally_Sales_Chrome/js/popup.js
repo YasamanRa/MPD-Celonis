@@ -4,7 +4,7 @@ console.log("popup.js loadeing");
 function resetAnalysisScreen () {
 
   $("#next-steps-to-do-block").show();
-  $("#sally1").show();
+  //$("#sally1").show();
 
 
   // HIDE DIVS
@@ -12,9 +12,10 @@ function resetAnalysisScreen () {
   $("#content-task-detail-2").hide();
   $("#add-task-form-box").hide();
   $("#content-block-colleague").hide();
-  $("#sally2").hide();
-  $("#sally3").hide();
-  $("#sally4").hide();
+  $("#load-claim").hide();
+  //$("#sally2").hide();
+  //$("#sally3").hide();
+  //$("#sally4").hide();
 
 
   // UNCHECK CHECKBOXES
@@ -39,8 +40,8 @@ function colleagueClickHandler(e) {
 
   $("#content-block-colleague").slideToggle();
 
-  $("#sally2").hide();
-  $("#sally3").fadeIn(1000);
+  //$("#sally2").hide();
+  //$("#sally3").fadeIn(1000);
 
 
 }
@@ -51,9 +52,10 @@ async function proceedAnalysisHandler(){
 
   $("#start-screen").hide();
   $("#load-screen").show();
+  $("#load-claim").fadeIn();
 
   // Wait for a bit ... We are loading :-)
-  await sleep(3000);
+  await sleep(3500);
   // show analyis screen
   $("#load-screen").hide();
   $("#analysis-screen").show();
@@ -82,8 +84,8 @@ function taskDetailHandler(){
     $('#content-task-detail-2').slideToggle();
   }
 
-  $("#sally1").hide();
-  $("#sally2").fadeIn(1000);
+  //$("#sally1").hide();
+  //$("#sally2").fadeIn(1000);
 }
 
 function taskClickHandler(){
@@ -92,8 +94,8 @@ function taskClickHandler(){
 
   $("#content-block-colleague").slideToggle();
 
-  $("#sally3").hide();
-  $("#sally4").fadeIn(1000);
+  //$("#sally3").hide();
+  //$("#sally4").fadeIn(1000);
 }
 
 function mailClickHandler(){
@@ -125,18 +127,33 @@ function toggleHandler() {
 function activateTabHandler(){
   // get content to activate and hide all other content
   console.log("Tab Handler Click");
-  $(".sally-assistant-wrapper").hide();
+  //$(".sally-assistant-wrapper").hide();
   $("div.icon-headline-block + div").slideUp();
   // Show content box under the tab
   $(this).siblings("div").first().slideDown();
   // Show sally
-  $(this).parent("div").prev("div").fadeIn(1000);
+  //$(this).parent("div").prev("div").fadeIn(1000);
 
 }
 
+var start = true;
+
 function startAnimation() {
   $("#start-header-wrapper").animate({ marginTop: '0px', opacity: 1 }, 800) ;
-  $("#case-description-wrapper").delay(900).fadeIn();
+  $('#pclaim').animate({'opacity': 0}, 800, function(){
+        $(this).html('I will guide you through your current sales deal.').animate({'opacity': 1}, 400);
+    });
+  $("#case-description-wrapper").delay(1800).fadeIn();
+  /*
+  if(start == true){
+    $('#pclaim').delay(810).fadeOut(80);
+    setTimeout($('#pclaim').text("I will guide you through your current sales deal.") , 1000);
+    $('#pclaim').delay(910).fadeIn(80);
+
+    start = false;
+  }
+  */
+
 }
 
 function lastActionHandler(){
@@ -180,7 +197,7 @@ async function wait(time) {
   document.getElementById("to-ressources").addEventListener("click", taskDetailHandler);
   document.getElementById("add-task-button").addEventListener("click", lastActionHandler);
 
-  $("#start-header-wrapper").mouseover(startAnimation);
+  $("#start-header-wrapper").click(startAnimation);
   $("#home").click(goToHomeScreen);
 
   var headlineBoxes = document.getElementsByClassName("icon-headline-block");
